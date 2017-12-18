@@ -1,0 +1,2 @@
+- name: LEPHARE - Install crontab
+  command: "crontab {{ lephare_crontab_path }}"

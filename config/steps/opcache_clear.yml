@@ -1,0 +1,19 @@
+- name: LEPHARE - Check for cachetool.phar
+  stat: path={{ lephare_cachetool_path }}
+  register: cachetool_file
+
+- name: LEPHARE - Run cachetool self-update
+  shell: "{{ lephare_cachetool_path }} self-update"
+  when: cachetool_file.stat.exists and lephare_cachetool_self_update
+  register: cachetool_self_update_result
+  changed_when: cachetool_self_update_result.stderr
+
+- name: LEPHARE - Install cachetool
+  get_url: url=http://gordalina.github.io/cachetool/downloads/cachetool.phar dest={{ lephare_cachetool_path }} mode=0755 validate_certs=no force=no
+
+- name: LEPHARE - Run cachetool opcache:reset
+  shell: chdir={{ansistrano_release_path.stdout}}
+    {{ symfony_php_path }} {{ lephare_cachetool_path }} opcache:reset --web --web-path={{ ansistrano_deploy_to }}/current/web --web-url=http://{{ ansible_host }}
+  when: cachetool_file.stat.exists
+  register: cachetool_install_result
+  changed_when: cachetool_install_result.stderr

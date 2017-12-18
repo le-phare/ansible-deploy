@@ -1,0 +1,9 @@
+- name: LEPHARE - Prevent Robots indexation
+  copy:
+    content: |
+        User-agent: *
+        Disallow: /
+
+        User-agent: LinkChecker
+        Allow: /
+    dest: "{{ ansistrano_deploy_to }}/current/web/robots.txt"

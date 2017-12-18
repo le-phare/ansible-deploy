@@ -1,0 +1,23 @@
+---
+lephare_default_git_branch: master
+
+lephare_assets_publish: true
+lephare_assets_build_path: "../web/compiled"
+
+lephare_cachetool_path: "{{ ansistrano_deploy_to }}/cachetool.phar"
+lephare_cachetool_self_update: true
+lephare_cachetool_stat_clear: true
+lephare_cachetool_opcache_reset: true
+
+lephare_rollbar_notify: true
+lephare_rollbar_environment: production
+
+lephare_crontab_install: false
+lephare_crontab_path: "{{ ansistrano_release_path.stdout }}/app/Resources/crontab"
+
+lephare_prevent_robots_indexation: false
+
+lephare_http_basic_secure: false
+lephare_http_basic_whitelist_referer: []
+lephare_http_basic_whitelist_ip: []
+

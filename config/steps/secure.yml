@@ -1,0 +1,35 @@
+- name: LEPHARE - Create htpasswd
+  command: "htpasswd -cb {{ ansistrano_shared_path }}/htpasswd {{ lephare_http_basic_user }} {{ lephare_http_basic_password }}"
+- name: LEPHARE - Secure with HTTP Basic
+  blockinfile:
+    path: "{{ ansistrano_release_path.stdout }}/web/.htaccess"
+    block: |
+        # Handles X-Forwarded-For
+        {% for ip in lephare_http_basic_whitelist_ip %}
+        SetEnvIf X-Forwarded-For {{ ip|replace('.','\.') }} NOPASSWD
+        {% endfor %}
+
+        # Handles Referers
+        {% for referer in lephare_http_basic_whitelist_referer %}
+        SetEnvIf X-Forwarded-For {{ referer }} NOPASSWD
+        {% endfor %}
+
+        # Handle special urls
+        SetEnvIf Request_URI "^/cachetool-.*" NOPASSWD
+
+        <RequireAny>
+            <RequireAll>
+                Require env NOPASSWD
+            </RequireAll>
+            <RequireAll>
+                AuthUserFile {{ ansistrano_shared_path }}/htpasswd
+                AuthType Basic
+                AuthName "Secured Area"
+                Require valid-user
+            </RequireAll>
+
+        {% for ip in lephare_http_basic_whitelist_ip %}
+            Require ip {{ ip }}
+        {% endfor %}
+
+        </RequireAny>

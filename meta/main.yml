@@ -1,0 +1,19 @@
+---
+dependencies:
+  - { role: cbrunnkvist.ansistrano-symfony-deploy}
+
+galaxy_info:
+  author: Erwan Richard
+  description: Common deploy tasks for projects made at Le Phare
+  company: Le Phare
+  license: MIT
+  issue_tracker_url: https://github.com/lephare/ansible-lephare
+  min_ansible_version: 1.8
+  platforms:
+    - name: GenericUNIX
+      versions:
+        - any
+  galaxy_tags:
+    - deployment
+    - php
+
