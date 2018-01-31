@@ -5,3 +5,9 @@ ansistrano_git_branch: "{{ lookup('env','CI_BUILD_REF') | default(lephare_defaul
 ansistrano_deploy_via: git
 ansistrano_allow_anonymous_stats: no
 ansistrano_keep_releases: 3
+
+symfony_run_assetic_dump: "{{ lephare_run_assetic_dump }}"
+symfony_run_assets_install: "{{ lephare_run_assets_install }}"
+symfony_run_cache_clear_and_warmup: "{{ lephare_run_cache_clear_and_warmup }}"
+symfony_run_doctrine_migrations: "{{ lephare_run_doctrine_migrations }}"
+symfony_console_path: "{{ lephare_console_path }}"
