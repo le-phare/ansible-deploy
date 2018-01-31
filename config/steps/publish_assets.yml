@@ -1,6 +1,6 @@
 - name: LEPHARE - Publish assets
   synchronize:
     src: "{{ lephare_assets_build_path }}"
-    dest: "{{ ansistrano_deploy_to }}/shared/web/compiled/"
+    dest: "{{ ansistrano_release_path.stdout }}/{{ lephare_assets_web_path }}"
     recursive: yes
     delete: yes

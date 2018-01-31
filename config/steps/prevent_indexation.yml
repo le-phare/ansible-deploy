@@ -6,4 +6,4 @@
 
         User-agent: LinkChecker
         Allow: /
-    dest: "{{ ansistrano_deploy_to }}/current/web/robots.txt"
+    dest: "{{ ansistrano_release_path.stdout }}/web/robots.txt"
