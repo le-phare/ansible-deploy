@@ -20,10 +20,3 @@ lephare_prevent_robots_indexation: false
 lephare_http_basic_secure: false
 lephare_http_basic_whitelist_referer: []
 lephare_http_basic_whitelist_ip: []
-
-
-symfony_run_assetic_dump: false
-symfony_run_assets_install: false
-symfony_run_cache_clear_and_warmup: true
-symfony_run_doctrine_migrations: true
-symfony_console_path: bin/console
