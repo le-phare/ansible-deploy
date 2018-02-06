@@ -6,3 +6,6 @@
 
 - include_tasks: "../../lephare.ansible-deploy/config/steps/install_crontab.yml"
   when: lephare_crontab_install
+
+- include_tasks: "../../lephare.ansible-deploy/config/steps/invalidate_cloudfront.yml"
+  when: lephare_cloudfront_invalidate

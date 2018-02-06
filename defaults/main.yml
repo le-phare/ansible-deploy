@@ -27,3 +27,6 @@ lephare_run_assets_install: true
 lephare_run_cache_clear_and_warmup: true
 lephare_run_doctrine_migrations: true
 lephare_console_path: bin/console
+
+lephare_cloudfront_invalidate: false
+lephare_cloudfront_path: [ '/*' ]
