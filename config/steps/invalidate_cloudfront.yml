@@ -1,4 +1,12 @@
+- name: Fetch aws cli version
+  shell: aws --version | cut -d" " -f1 | sed 's/aws-cli\///g'
+  register: awscli_version
+
+- fail:
+    msg: "Current awscli ({{awscli_version.stdout}}) is outdated, please update to >=1.11"
+  when: awscli_version.stdout | version_compare('1.11', '<')
+
 - name: 'Invalidate Cloudfront cache'
   command: aws cloudfront create-invalidation --distribution-id {{ lephare_cloudfront_distribution_id }} --paths "{{ item }}"
   with_items: " {{ lephare_cloudfront_path }}"
-
+  when: awscli_version.stdout | version_compare('1.11', '>=')
