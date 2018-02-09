@@ -17,8 +17,8 @@
   when: cachetool_file.stat.exists and lephare_cachetool_opcache_reset
   retries: 10
   delay: 5
-  register: cachetool_install_result
-  changed_when: cachetool_install_result.stderr
+  register: cachetool_opcache_result
+  until: cachetool_opcache_result.rc == 0
 
 - name: LEPHARE - Run cachetool apcu:cache:clear
   shell: chdir={{ansistrano_release_path.stdout}}
@@ -26,5 +26,5 @@
   when: cachetool_file.stat.exists and lephare_cachetool_apcu_clear
   retries: 10
   delay: 5
-  register: cachetool_install_result
-  changed_when: cachetool_install_result.stderr
+  register: cachetool_apcu_result
+  until: cachetool_apcu_result.rc == 0
