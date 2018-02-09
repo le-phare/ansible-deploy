@@ -1,5 +1,4 @@
 - include_tasks: "../../lephare.ansible-deploy/config/steps/opcache_clear.yml"
-  when: lephare_cachetool_opcache_reset
 
 - include_tasks: "../../lephare.ansible-deploy/config/steps/rollbar_notify.yml"
   when: lephare_rollbar_notify

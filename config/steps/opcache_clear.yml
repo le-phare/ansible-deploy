@@ -14,7 +14,16 @@
 - name: LEPHARE - Run cachetool opcache:reset
   shell: chdir={{ansistrano_release_path.stdout}}
     {{ symfony_php_path }} {{ lephare_cachetool_path }} opcache:reset --web --web-path={{ ansistrano_deploy_to }}/current/web --web-url=http://{{ inventory_hostname }}
-  when: cachetool_file.stat.exists
+  when: cachetool_file.stat.exists and lephare_cachetool_opcache_reset
+  retries: 10
+  delay: 5
+  register: cachetool_install_result
+  changed_when: cachetool_install_result.stderr
+
+- name: LEPHARE - Run cachetool apcu:cache:clear
+  shell: chdir={{ansistrano_release_path.stdout}}
+    {{ symfony_php_path }} {{ lephare_cachetool_path }} apcu:cache:clear --web --web-path={{ ansistrano_deploy_to }}/current/web --web-url=http://{{ inventory_hostname }}
+  when: cachetool_file.stat.exists and lephare_cachetool_apcu_clear
   retries: 10
   delay: 5
   register: cachetool_install_result

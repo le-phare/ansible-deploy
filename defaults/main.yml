@@ -9,6 +9,7 @@ lephare_cachetool_path: "{{ ansistrano_deploy_to }}/cachetool.phar"
 lephare_cachetool_self_update: true
 lephare_cachetool_stat_clear: true
 lephare_cachetool_opcache_reset: true
+lephare_cachetool_apcu_clear: true
 
 lephare_rollbar_notify: true
 lephare_rollbar_environment: production
