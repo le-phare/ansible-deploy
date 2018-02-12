@@ -1,5 +1,5 @@
 - name: Fetch aws cli version
-  shell: aws --version | cut -d" " -f1 | sed 's/aws-cli\///g'
+  shell: aws --version 2>&1 | cut -d" " -f1 | sed 's/aws-cli\///g'
   register: awscli_version
 
 - name: 'Invalidate Cloudfront cache'
