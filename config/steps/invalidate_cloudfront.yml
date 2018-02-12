@@ -5,4 +5,4 @@
 - name: 'Invalidate Cloudfront cache'
   command: aws cloudfront create-invalidation --distribution-id {{ lephare_cloudfront_distribution_id }} --paths "{{ item }}"
   with_items: " {{ lephare_cloudfront_path }}"
-  when: "{{ awscli_version.stdout | version_compare('1.10', '>=') }}"
+  when: awscli_version.stdout | version_compare('1.10', '>=')
