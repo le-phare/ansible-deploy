@@ -1,8 +1,8 @@
-- name: Fetch aws cli version
-  shell: aws --version 2>&1 | cut -d" " -f1 | sed 's/aws-cli\///g'
-  register: awscli_version
+- name: Update awscli
+  shell: pip install --user --upgrade awscli
 
 - name: 'Invalidate Cloudfront cache'
   command: aws cloudfront create-invalidation --distribution-id {{ lephare_cloudfront_distribution_id }} --paths "{{ item }}"
   with_items: " {{ lephare_cloudfront_path }}"
-  when: awscli_version.stdout | version_compare('1.10', '>=')
+  environment:
+    PATH: ~/.local/bin:{{ ansible_env.PATH }}
