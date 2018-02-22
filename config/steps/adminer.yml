@@ -1,2 +1,4 @@
 - name: LEPHARE - install latest Adminer
-  command: "wget -o {{ lephare_install_adminer_path }}/adminer.php https://www.adminer.org/latest.php"
+  get_url:
+    url: https://www.adminer.org/latest.php
+    dest: "{{ lephare_install_adminer_path }}/adminer.php"
