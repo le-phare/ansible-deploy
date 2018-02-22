@@ -7,3 +7,5 @@
 - include_tasks: "../../lephare.ansible-deploy/config/steps/secure.yml"
   when: lephare_http_basic_secure
 
+- include_tasks: "../../lephare.ansible-deploy/config/steps/adminer.yml"
+  when: lephare_install_adminer
