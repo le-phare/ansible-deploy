@@ -3,7 +3,7 @@
 - name: LEPHARE - Secure with HTTP Basic
   blockinfile:
     path: "{{ ansistrano_release_path.stdout }}/web/.htaccess"
-    insertAfter: "# Authorization settings"
+    insertafter: "# Authorization settings"
     block: |
         # Handles X-Forwarded-For
         {% for ip in lephare_http_basic_whitelist_ip %}
