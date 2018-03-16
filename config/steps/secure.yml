@@ -3,6 +3,7 @@
 - name: LEPHARE - Secure with HTTP Basic
   blockinfile:
     path: "{{ ansistrano_release_path.stdout }}/web/.htaccess"
+    insertAfter: "# Authorization settings"
     block: |
         # Handles X-Forwarded-For
         {% for ip in lephare_http_basic_whitelist_ip %}
@@ -17,19 +18,15 @@
         # Handle special urls
         SetEnvIf Request_URI "^/cachetool-.*" NOPASSWD
 
-        <RequireAny>
-            <RequireAll>
-                Require env NOPASSWD
-            </RequireAll>
-            <RequireAll>
-                AuthUserFile {{ ansistrano_shared_path }}/htpasswd
-                AuthType Basic
-                AuthName "Secured Area"
-                Require valid-user
-            </RequireAll>
+        # Basic security
+        AuthUserFile {{ ansistrano_shared_path }}/htpasswd
+        AuthType Basic
+        AuthName "Secured Area"
 
+        <RequireAny>
         {% for ip in lephare_http_basic_whitelist_ip %}
             Require ip {{ ip }}
         {% endfor %}
-
+            Require env NOPASSWD
+            Require valid-user
         </RequireAny>
