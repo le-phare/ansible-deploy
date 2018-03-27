@@ -16,7 +16,7 @@
         {% endfor %}
 
         # Handle special urls
-        {% for referer in lephare_http_basic_whitelist_path %}
+        {% for path in lephare_http_basic_whitelist_path %}
         SetEnvIf Request_URI "{{ path }}" NOPASSWD
         {% endfor %}
 
