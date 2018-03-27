@@ -22,6 +22,7 @@ lephare_prevent_robots_indexation: false
 lephare_http_basic_secure: false
 lephare_http_basic_whitelist_referer: []
 lephare_http_basic_whitelist_ip: []
+lephare_http_basic_whitelist_path: [ "^/cachetool-.*" ]
 
 lephare_run_assetic_dump: false
 lephare_run_assets_install: true

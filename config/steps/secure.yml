@@ -16,7 +16,9 @@
         {% endfor %}
 
         # Handle special urls
-        SetEnvIf Request_URI "^/cachetool-.*" NOPASSWD
+        {% for referer in lephare_http_basic_whitelist_path %}
+        SetEnvIf Request_URI "{{ path }}" NOPASSWD
+        {% endfor %}
 
         # Basic security
         AuthUserFile {{ ansistrano_shared_path }}/htpasswd
