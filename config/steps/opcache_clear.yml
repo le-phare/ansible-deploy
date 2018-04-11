@@ -16,7 +16,7 @@
     {{ symfony_php_path }} {{ lephare_cachetool_path }} opcache:reset --web --web-path={{ ansistrano_deploy_to }}/current/web --web-url=http://{{ inventory_hostname }}
   when: cachetool_file.stat.exists and lephare_cachetool_opcache_reset
   retries: 10
-  delay: 30
+  delay: 15
   register: cachetool_opcache_result
   until: cachetool_opcache_result.rc == 0
 
@@ -25,6 +25,6 @@
     {{ symfony_php_path }} {{ lephare_cachetool_path }} apcu:cache:clear --web --web-path={{ ansistrano_deploy_to }}/current/web --web-url=http://{{ inventory_hostname }}
   when: cachetool_file.stat.exists and lephare_cachetool_apcu_clear
   retries: 10
-  delay: 30
+  delay: 15
   register: cachetool_apcu_result
   until: cachetool_apcu_result.rc == 0
