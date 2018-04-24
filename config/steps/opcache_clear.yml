@@ -5,6 +5,7 @@
 - name: LEPHARE - Run cachetool self-update
   shell: "{{ lephare_cachetool_path }} self-update"
   when: cachetool_file.stat.exists and lephare_cachetool_self_update
+  ignore_errors: True
   register: cachetool_self_update_result
   changed_when: cachetool_self_update_result.stderr
 
