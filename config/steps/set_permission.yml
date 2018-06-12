@@ -1,4 +1,4 @@
-- name: LEPHARE - Setup directory permissions for var/logs
+- name: LEPHARE - Setup directory permissions
   file:
     path: "{{ item }}"
     state: directory
