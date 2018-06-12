@@ -44,6 +44,11 @@ The defaults vars declared in this module:
     lephare_install_adminer: false
     lephare_install_adminer_path: "{{ ansistrano_release_path.stdout }}/web"
 
+    lephare_permission_set: false
+    lephare_permission_writeable_dirs: [ "{{ ansistrano_release_path.stdout }}/var/cache", "{{ ansistrano_shared_path }}/var/logs" ]
+    lephare_permission_chmod: 0777
+
+
 Additionnaly, this module change some defaults vars from `cbrunnkvist.ansistrano-symfony-deploy` and `ansistrano.deploy`
 
     ansistrano_after_symlink_tasks_file: "../../lephare.ansible-deploy/config/after_symlink.yml"
