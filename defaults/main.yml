@@ -39,4 +39,4 @@ lephare_install_adminer_path: "{{ ansistrano_release_path.stdout }}/web"
 
 lephare_permission_set: false
 lephare_permission_paths: [ "{{ ansistrano_release_path.stdout }}/var/cache", "{{ ansistrano_shared_path }}/var/logs" ]
-lephare_permission_users: [ "www-data", "{{ ansistrano_ssh_user }}" ]
+lephare_permission_users: [ "www-data", "{{ ansible_user }}" ]
