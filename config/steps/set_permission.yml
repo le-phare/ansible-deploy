@@ -1,7 +1,9 @@
 - name: LEPHARE - Setup directory permissions
-  file:
-    path: "{{ item }}"
+  acl:
+    path: "{{ item[0] }}"
+    entity: "{{ item[1] }}"
+    permissions: rwx
+    etype: user
+    recursive: true
     state: directory
-    mode: "{{ lephare_permission_chmod }}"
-    recurse: true
-  with_items: " {{ lephare_permission_writeable_dirs }}"
+  loop: "{{ query('nested', lephare_permission_paths, lephare_permission_users) }}"
