@@ -1,3 +1,14 @@
+- name: LEPHARE - Setup default directory permissions
+  acl:
+    path: "{{ item[0] }}"
+    entity: "{{ item[1] }}"
+    permissions: rwx
+    etype: user
+    recursive: true
+    state: present
+    default: yes
+  loop: "{{ query('nested', lephare_permission_paths, lephare_permission_users) }}"
+
 - name: LEPHARE - Setup directory permissions
   acl:
     path: "{{ item[0] }}"
@@ -5,5 +16,6 @@
     permissions: rwx
     etype: user
     recursive: true
-    state: directory
+    state: present
   loop: "{{ query('nested', lephare_permission_paths, lephare_permission_users) }}"
+
