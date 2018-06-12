@@ -36,3 +36,6 @@ lephare_cloudfront_path: [ '/*' ]
 
 lephare_install_adminer: false
 lephare_install_adminer_path: "{{ ansistrano_release_path.stdout }}/web"
+
+lephare_permission_set: false
+lephare_permission_chmod: 0777

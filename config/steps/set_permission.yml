@@ -1,0 +1,13 @@
+- name: LEPHARE - Setup directory permissions for var/logs
+  file:
+    path: "{{ ansistrano_shared_path }}/var/logs"
+    state: directory
+    mode: "{{ lephare_permission_chmod }}"
+    recurse: true
+
+- name: LEPHARE - Setup directory permissions for var/cache
+  file:
+    path: "{{ ansistrano_release_path.stdout }}/var/cache"
+    state: directory
+    mode: "{{ lephare_permission_chmod }}"
+    recurse: true

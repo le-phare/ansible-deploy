@@ -1,0 +1,2 @@
+- include_tasks: "../../lephare.ansible-deploy/config/steps/set_permission.yml"
+  when: lephare_set_permission
