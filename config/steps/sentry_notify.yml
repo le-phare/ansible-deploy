@@ -1,0 +1,23 @@
+- name: LEPHARE - Sentry - Create release
+  uri:
+    url: "https://sentry.io/api/0/projects/le-phare/{{ lephare_sentry_project }}/releases/"
+    method: POST
+    body_format: json
+    status_code: "201,208"
+    headers:
+      Authorization: "Bearer {{ lephare_sentry_token }}"
+    body: |
+      {"version": "{{ ansistrano_git_result.after }}"}
+  register: sentry_create_release_result
+  changed_when: sentry_create_release_result.status == 201
+
+- name: LEPHARE - Sentry - Notify deploy
+  uri:
+    url: "https://sentry.io/api/0/organizations/le-phare/releases/{{ ansistrano_git_result.after }}/deploys/"
+    method: POST
+    body_format: json
+    status_code: "201"
+    headers:
+      Authorization: "Bearer {{ lephare_sentry_token }}"
+    body: |
+      {"environment": "{{ lephare_sentry_environment }}"}

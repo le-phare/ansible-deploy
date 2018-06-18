@@ -1,10 +1,13 @@
 - include_tasks: "../../lephare.ansible-deploy/config/steps/opcache_clear.yml"
 
-- include_tasks: "../../lephare.ansible-deploy/config/steps/rollbar_notify.yml"
-  when: lephare_rollbar_notify
-
 - include_tasks: "../../lephare.ansible-deploy/config/steps/install_crontab.yml"
   when: lephare_crontab_install
 
 - include_tasks: "../../lephare.ansible-deploy/config/steps/invalidate_cloudfront.yml"
   when: lephare_cloudfront_invalidate
+
+- include_tasks: "../../lephare.ansible-deploy/config/steps/rollbar_notify.yml"
+  when: lephare_rollbar_notify
+
+- include_tasks: "../../lephare.ansible-deploy/config/steps/sentry_notify.yml"
+  when: lephare_sentry_notify
