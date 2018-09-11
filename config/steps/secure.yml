@@ -2,7 +2,7 @@
   command: "htpasswd -cb {{ ansistrano_shared_path }}/htpasswd {{ lephare_http_basic_user }} {{ lephare_http_basic_password }}"
 - name: LEPHARE - Secure with HTTP Basic
   blockinfile:
-    path: "{{ ansistrano_release_path.stdout }}/web/.htaccess"
+    path: "{{ lephare_document_root_path }}/.htaccess"
     insertafter: "# Authorization settings"
     block: |
         # Handles X-Forwarded-For

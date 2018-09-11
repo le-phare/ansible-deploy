@@ -6,4 +6,4 @@
 
         User-agent: LinkChecker
         Allow: /
-    dest: "{{ ansistrano_release_path.stdout }}/web/robots.txt"
+    dest: "{{ lephare_document_root_path }}/robots.txt"
