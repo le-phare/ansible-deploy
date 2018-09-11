@@ -1,7 +1,7 @@
 ---
 ansistrano_after_symlink_tasks_file: "{{ lephare_after_symlink_tasks_file | default('../../lephare.ansible-deploy/config/after_symlink.yml') }}"
 ansistrano_before_symlink_tasks_file: "{{ lephare_before_symlink_tasks_file | default('../../lephare.ansible-deploy/config/before_symlink.yml') }}"
-ansistrano_before_symlink_tasks_file: "{{ lephare_symfony_after_cache_tasks_file | default('../../lephare.ansible-deploy/config/after_cache.yml') }}"
+ansistrano_symfony_after_cache_tasks_file: "{{ lephare_symfony_after_cache_tasks_file | default('../../lephare.ansible-deploy/config/after_cache.yml') }}"
 ansistrano_git_branch: "{{ lookup('env','CI_BUILD_REF') | default(lephare_default_git_branch, true) }}"
 ansistrano_deploy_via: git
 ansistrano_allow_anonymous_stats: no
