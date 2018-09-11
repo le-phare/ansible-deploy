@@ -10,9 +10,11 @@ The defaults vars declared in this module:
 
     lephare_default_git_branch: master
 
+    lephare_document_root_path: "{{ ansistrano_deploy_to }}/current/web"
+
     lephare_assets_publish: true
     lephare_assets_build_path: "../web/compiled/"
-    lephare_assets_web_path: "web/compiled/"
+    lephare_assets_web_path: "compiled/"
 
     lephare_cachetool_path: "{{ ansistrano_deploy_to }}/cachetool.phar"
     lephare_cachetool_self_update: true
@@ -46,7 +48,7 @@ The defaults vars declared in this module:
     lephare_cloudfront_path: [ '/*' ]
 
     lephare_install_adminer: false
-    lephare_install_adminer_path: "{{ ansistrano_release_path.stdout }}/web"
+    lephare_install_adminer_path: "{{ lephare_document_root_path }}"
 
     lephare_permission_set: false
     lephare_permission_paths: [ "{{ ansistrano_release_path.stdout }}/var/cache", "{{ ansistrano_shared_path }}/var/logs" ]
