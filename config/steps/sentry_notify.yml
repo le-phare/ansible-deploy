@@ -10,6 +10,7 @@
       {"version": "{{ ansistrano_git_result.after }}"}
   register: sentry_create_release_result
   changed_when: sentry_create_release_result.status == 201
+  ignore_errors: True
 
 - name: LEPHARE - Sentry - Notify deploy
   uri:
@@ -21,3 +22,5 @@
       Authorization: "Bearer {{ lephare_sentry_token }}"
     body: |
       {"environment": "{{ lephare_sentry_environment }}"}
+  when: sentry_create_release_result.status == 201
+  ignore_errors: True
