@@ -72,7 +72,7 @@ Additionnaly, this module change some defaults vars from `cbrunnkvist.ansistrano
 Dependencies
 ------------
 
-  - cbrunnkvist.ansistrano-symfony-deploy
+  - [cbrunnkvist/ansistrano-symfony-deploy](https://github.com/cbrunnkvist/ansistrano-symfony-deploy)
   - ansistrano.deploy
 
 Example Playbook
