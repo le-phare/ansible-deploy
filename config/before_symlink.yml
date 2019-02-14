@@ -9,3 +9,6 @@
 
 - include_tasks: "../../lephare.ansible-deploy/config/steps/adminer.yml"
   when: lephare_install_adminer
+
+- include_tasks: "../../lephare.ansible-deploy/config/steps/couscous.yml"
+  when: lephare_couscous_enable

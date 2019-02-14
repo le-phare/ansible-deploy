@@ -1,0 +1,19 @@
+- name: LEPHARE - Check for couscous.phar
+  stat: path={{ lephare_couscous_path }}
+  register: couscous_file
+
+- name: LEPHARE - Run couscous self-update
+  shell: "{{ lephare_couscous_path }} self-update"
+  when: couscous_file.stat.exists and lephare_couscous_self_update
+  ignore_errors: True
+  register: couscous_self_update_result
+  changed_when: couscous_self_update_result.stderr
+
+- name: LEPHARE - Install couscous
+  get_url: url=http://gordalina.github.io/couscous/downloads/couscous.phar dest={{ lephare_couscous_path }} mode=0755 validate_certs=no force=no
+  when: not couscous_file.stat.exists
+
+- name: LEPHARE - Run couscous generate
+  shell: chdir={{ansistrano_release_path.stdout}}
+    {{ symfony_php_path }} {{ lephare_couscous_path }} generate {{ lephare_couscous_documentation_path }} --target={{ lephare_couscous_target }} --config baseUrl={{ lephare_couscous_baseUrl }}
+  when: couscous_file.stat.exists

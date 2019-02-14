@@ -47,3 +47,9 @@ lephare_install_adminer_path: "{{ lephare_document_root_path }}"
 lephare_permission_set: false
 lephare_permission_paths: [ "{{ ansistrano_release_path.stdout }}/var/cache", "{{ ansistrano_shared_path }}/var/logs" ]
 lephare_permission_users: [ "www-data", "{{ ansible_user }}" ]
+
+lephare_couscous_scheme: https
+lephare_couscous_path: "{{ ansistrano_deploy_to }}/couscous.phar"
+lephare_couscous_documentation_path: docs
+lephare_couscous_target: "{{ lephare_document_root_path }}/docs"
+lephare_couscous_baseUrl: "https://{{ inventory_hostname }}/docs"
