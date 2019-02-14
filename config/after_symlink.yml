@@ -1,4 +1,5 @@
-- include_tasks: "../../lephare.ansible-deploy/config/steps/opcache_clear.yml"
+- include_tasks: "../../lephare.ansible-deploy/config/steps/cachetool.yml"
+  when: lephare_cachetool_enable
 
 - include_tasks: "../../lephare.ansible-deploy/config/steps/install_crontab.yml"
   when: lephare_crontab_install

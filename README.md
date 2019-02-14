@@ -16,6 +16,7 @@ The defaults vars declared in this module:
     lephare_assets_build_path: "../web/compiled/"
     lephare_assets_web_path: "compiled/"
 
+    lephare_cachetool_enable: true
     lephare_cachetool_path: "{{ ansistrano_deploy_to }}/cachetool.phar"
     lephare_cachetool_self_update: true
     lephare_cachetool_stat_clear: true
