@@ -13,5 +13,5 @@
 - include_tasks: "../../lephare.ansible-deploy/config/steps/sentry_notify.yml"
   when: lephare_sentry_notify
 
-- include_tasks: "../../lephare.ansible-deploy/config/steps/notify_slack.yml"
+- include_tasks: "../../lephare.ansible-deploy/config/steps/slack_notify.yml"
   when: lephare_slack_notify
