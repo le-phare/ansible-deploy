@@ -1,6 +1,7 @@
 - name: Notify Slack channel deploy
-  uri:
-    url: "{{ lephare_slack_notify_webhook_url }}"
-    method: POST
-    body: |
-      {"channel": "#{{ lephare_slack_notify_channel }}", "username": "{{ lephare_slack_notify_username }}", "text": "Déploiement vers {{ application_environment }} terminé", "icon_emoji": ":rocket:"}
+  slack:
+    token: '{{ lephare_slack_notify_token }}'
+    msg: 'Déploiement vers {{ application_environment }} terminé'
+    channel: '#{{ lephare_slack_notify_channel }}'
+    username: 'Ansible on {{ inventory_hostname }}'
+    icon_emoji:  ':rocket:'
