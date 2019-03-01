@@ -19,7 +19,7 @@ lephare_rollbar_notify: false
 lephare_rollbar_environment: production
 
 lephare_sentry_notify: false
-lephare_notify_slack_deploy: false
+lephare_slack_notify: false
 lephare_sentry_environment: production
 
 lephare_crontab_install: false
