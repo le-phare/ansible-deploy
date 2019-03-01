@@ -1,6 +1,6 @@
 - name: Notify Slack channel deploy
   uri:
-    url: "{{ notify_slack_deploy_webhook_url }}"
+    url: "{{ lephare_slack_notify_webhook_url }}"
     method: POST
     body: |
-      {"channel": "#{{ notify_slack_deploy_channel }}", "username": "{{ notify_slack_deploy_username }}", "text": "Déploiement vers {{ application_environment }} terminé", "icon_emoji": ":rocket:"}
+      {"channel": "#{{ lephare_slack_notify_channel }}", "username": "{{ lephare_slack_notify_username }}", "text": "Déploiement vers {{ application_environment }} terminé", "icon_emoji": ":rocket:"}
