@@ -1,8 +1,7 @@
 - name: Notify Slack channel deploy
   slack:
-    domain: "{{ slack_domain }}"
-    token: "{{ slack_token }}"
-    msg: "Déploiement vers {{ application_environment }} terminé"
-    channel: "#{{ lephare_slack_notify_channel }}"
-    username: "Ansible on {{ inventory_hostname }}"
-    icon_emoji:  ":rocket:"
+    token: '{{ lephare_slack_notify_token }}'
+    msg: 'Déploiement vers {{ application_environment }} terminé'
+    channel: '#{{ lephare_slack_notify_channel }}'
+    username: 'Ansible on {{ inventory_hostname }}'
+    icon_emoji:  ':rocket:'
