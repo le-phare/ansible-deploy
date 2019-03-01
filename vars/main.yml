@@ -16,4 +16,3 @@ symfony_console_path: "{{ lephare_console_path }}"
 symfony_composer_options: "{{ lephare_composer_options }}"
 
 slack_domain: lephare.slack.com
-slack_token: "{{ lephare_slack_notify_token }}"
