@@ -1,3 +1,9 @@
+- name: get latest commit message
+  shell: 'git log {{ ansistrano_git_branch }} --pretty="%s" -n1'
+  args:
+    chdir: "{{ ansistrano_deploy_to }}/{{ ansistrano_repo_dir }}"
+  register: latest_commit_message
+
 - name: Notify Slack channel deploy
   slack:
     token: "{{ lephare_slack_notify_token }}"
