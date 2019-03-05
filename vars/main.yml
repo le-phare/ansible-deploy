@@ -6,6 +6,7 @@ ansistrano_git_branch: "{{ lookup('env','CI_BUILD_REF') | default(lephare_defaul
 ansistrano_deploy_via: git
 ansistrano_allow_anonymous_stats: no
 ansistrano_keep_releases: 3
+ansistrano_after_update_code_tasks_file: "{{ lephare_after_code_update_tasks_file | default('../../lephare.ansible-deploy/config/after_update_code.yml') }}"
 
 symfony_run_assetic_dump: "{{ lephare_run_assetic_dump }}"
 symfony_run_assets_install: "{{ lephare_run_assets_install }}"
