@@ -98,7 +98,30 @@ Example Playbook
         ansistrano_shared_files:
           - app/config/parameters.yml
 
+Use with docker
+---------------
+
+We use a docker image `lephare/ansible` to deploy our projects.
+
+    docker run -it --rm \
+        -v $(shell pwd):/app
+        -v $(SSH_AUTH_SOCK):/ssh-agent \
+        -v $(HOME)/.ssh:/home/ansible/.ssh:ro \
+        -e SSH_AUTH_SOCK=/ssh-agent \
+        lephare/ansible \
+        ansible-playbook \
+        -i ansible/production/hosts \
+        ansible/deploy.yml
+
+Contribute
+----------
+
+Clone or fork the repository and make your change in a branch.
+
+You can test your modification by build your own docker image. You need to edit the `docker/roles.yml` and adjust the repository url and branch name. Then you can build the image with.
+
+    $ docker build -t lephare/ansible ./docker
+
 License
 -------
-
 MIT
