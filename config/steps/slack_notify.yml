@@ -1,9 +1,38 @@
+- name: get latest commit message
+  shell: 'git log {{ ansistrano_git_branch }} --pretty="%s" -n1'
+  args:
+    chdir: "{{ ansistrano_deploy_to }}/{{ ansistrano_repo_dir }}"
+  register: latest_commit_message
+
+- name: get latest commit author
+  shell: 'git log {{ ansistrano_git_branch }} --pretty="%an" -n1'
+  args:
+    chdir: "{{ ansistrano_deploy_to }}/{{ ansistrano_repo_dir }}"
+  register: latest_commit_author
+
 - name: Notify Slack channel deploy
   slack:
     token: "{{ lephare_slack_notify_token }}"
     channel: "{{ lephare_slack_notify_channel }}"
     username: "{{ lephare_slack_notify_username }}"
-    msg: "Déploiement vers {{ application_environment }} terminé"
-    icon_emoji: ":rocket:"
-    color: good
+    icon_url: "{{ lephare_slack_notify_icon_url }}"
+    attachments:
+      - pretext: Déploiement terminé
+        fallback: "{{ inventory_hostname }} - Déploiement en {{ application_environment }} terminé"
+        image_url: "{{ ['https://media.giphy.com/media/eSpjNlNWb5gIg/giphy-downsized.gif', 'https://media.giphy.com/media/VC96RhR4TT9AI/giphy-downsized.gif', 'https://media.giphy.com/media/3o7bufRpr472fizpHa/giphy-downsized.gif', 'https://media.giphy.com/media/122475GO2xxryg/giphy-downsized.gif']|random }}"
+        fields:
+          - title: Environnement
+            value: "{{ application_environment|capitalize }}"
+            short: True
+          - title: Release
+            value: "{{ ansistrano_git_result.after|truncate(7, True, '') }}"
+            short: True
+          - title: Dernière modification
+            value: "`{{ latest_commit_message.stdout }}` par _{{ latest_commit_author.stdout }}_"
+        actions:
+          - type: button
+            text: Voir le site
+            url: "{{ lephare_cachetool_scheme }}://{{ inventory_hostname }}"
+            style: primary
+
 

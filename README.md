@@ -120,7 +120,7 @@ Clone or fork the repository and make your change in a branch.
 
 You can test your modification by build your own docker image. You need to edit the `docker/roles.yml` and adjust the repository url and branch name. Then you can build the image with.
 
-    $ docker build -t lephare/ansible ./docker
+    $ docker build -t lephare/ansible ./docker --no-cache
 
 License
 -------
