@@ -2,4 +2,4 @@
   name: db-pull
 - src: https://github.com/le-phare/ansible-deploy
   name: lephare.ansible-deploy
-  version: slack-notify
+  version: master
