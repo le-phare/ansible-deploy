@@ -9,7 +9,7 @@
     token: "{{ lephare_slack_notify_token }}"
     channel: "{{ lephare_slack_notify_channel }}"
     username: "{{ lephare_slack_notify_username }}"
-    msg: "Déploiement vers {{ application_environment }} terminé. {{ latest_commit_message }}"
+    msg: "Déploiement vers *{{ application_environment }}* terminé\n> {{ latest_commit_message.stdout }}"
     icon_emoji: ":rocket:"
     color: good
 
