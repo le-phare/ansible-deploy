@@ -19,7 +19,6 @@
     attachments:
       - pretext: Déploiement terminé
         fallback: "{{ inventory_hostname }} - Déploiement en {{ application_environment }} terminé"
-        image_url: "{{ ['https://media.giphy.com/media/eSpjNlNWb5gIg/giphy-downsized.gif', 'https://media.giphy.com/media/VC96RhR4TT9AI/giphy-downsized.gif', 'https://media.giphy.com/media/3o7bufRpr472fizpHa/giphy-downsized.gif', 'https://media.giphy.com/media/122475GO2xxryg/giphy-downsized.gif']|random }}"
         fields:
           - title: Environnement
             value: "{{ application_environment|capitalize }}"
