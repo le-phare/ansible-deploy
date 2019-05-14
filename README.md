@@ -1,7 +1,7 @@
 lephare.ansible-deploy
 ======================
 
-Common deploy tasks for projects made at Le Phare
+Common deploy tasks for projects made at Le Phare.
 
 Role Variables
 --------------
