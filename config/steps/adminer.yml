@@ -2,3 +2,4 @@
   get_url:
     url: https://www.adminer.org/latest.php
     dest: "{{ lephare_install_adminer_path }}/adminer.php"
+    ignore_errors: True
