@@ -1,0 +1,28 @@
+- name: Checking Statuscake test existence
+  register: statuscake
+  uri:
+    url: "https://app.statuscake.com/API/Tests"
+    headers:
+      API: "{{ lephare_statuscake_key }}"
+      Username: "{{ lephare_statuscake_username }}"
+    body_format: form-urlencoded
+    method: GET
+
+- name: Create Statuscake test
+  when: statuscake.status == 200 and (statuscake.json|json_query('[].WebsiteName') is match(inventory_hostname))
+  uri:
+    url: "https://app.statuscake.com/API/Tests/Update"
+    headers:
+      API: "{{ lephare_statuscake_key }}"
+      Username: "{{ lephare_statuscake_username }}"
+    body: 
+      WebsiteName: "{{ inventory_hostname }}"
+      WebsiteHost: "{{ inventory_hostname }}"
+      WebsiteURL: "{{ lephare_cachetool_scheme }}://{{ inventory_hostname }}"
+      CheckRate: 900
+      TestType: HTTP
+      NodeLocations: "317,318,319,320,321"  # France
+      ContactGroup: 64792                   # Slack 
+    method: PUT
+    body_format: form-urlencoded
+    status_code: "201,208"

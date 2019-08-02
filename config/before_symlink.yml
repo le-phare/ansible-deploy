@@ -1,3 +1,6 @@
+- include_tasks: "../../lephare.ansible-deploy/config/steps/statuscake.yml"
+  when: lephare_statuscake_enable
+
 - include_tasks: "../../lephare.ansible-deploy/config/steps/publish_assets.yml"
   when: lephare_assets_publish
 
