@@ -4,3 +4,4 @@
   name: lephare.ansible-deploy
   version: test-server
 - src: naftulikay.degoss
+  name: lephare.test-server
