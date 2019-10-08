@@ -1,4 +1,4 @@
-- name: lephare.test-server
+- name: LEPHARE - Test server
   hosts: app
   vars: {}
   roles:
