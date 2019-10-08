@@ -3,3 +3,4 @@
 - src: https://github.com/le-phare/ansible-deploy
   name: lephare.ansible-deploy
   version: test-server
+- src: naftulikay.degoss
