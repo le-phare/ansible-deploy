@@ -1,6 +1,6 @@
 - name: LEPHARE - notify Rollbar
   rollbar_deployment:
     token: "{{ lephare_rollbar_token }}"
-    environment: "{{ application_environment|default(lephare_rollbar_environment) }}"
+    environment: "{{ lephare_rollbar_environment|default(application_environment) }}"
     user: ansible
     revision: "{{ ansistrano_git_result.after }}"
