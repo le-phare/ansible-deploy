@@ -1,6 +1,3 @@
-- include_tasks: "../../lephare.ansible-deploy/config/steps/test_server.yml"
-  when: lephare_test_server
-
 - include_tasks: "../../lephare.ansible-deploy/config/steps/publish_assets.yml"
   when: lephare_assets_publish
 
