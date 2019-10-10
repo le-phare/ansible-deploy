@@ -1,9 +1,0 @@
-- name: LEPHARE - Test server
-  hosts: app
-  vars: {}
-  roles:
-    - role: degoss
-      degoss_debug: true
-      degoss_clean: false
-      goss_file: "{{ lephare_document_root_path }}/../goss.yaml"
-      goss_env_vars: {}
