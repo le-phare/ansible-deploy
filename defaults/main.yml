@@ -1,4 +1,6 @@
 ---
+application_environment: production
+
 lephare_default_git_branch: master
 
 lephare_document_root_path: "{{ ansistrano_release_path.stdout }}/web"
@@ -16,10 +18,8 @@ lephare_cachetool_apcu_clear: true
 lephare_cachetool_scheme: https
 
 lephare_rollbar_notify: false
-lephare_rollbar_environment: production
-
 lephare_sentry_notify: false
-lephare_sentry_environment: production
+lephare_tideways_notify: false
 
 lephare_slack_notify: false
 lephare_slack_notify_username: Hubert

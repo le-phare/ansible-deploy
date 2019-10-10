@@ -1,0 +1,14 @@
+- name: LEPHARE - Tideways - Create deploy
+  uri:
+    url: "https://app.tideways.io/api/events"
+    method: POST
+    body_format: json
+    body: |
+      {
+        "apiKey": "{{ lephare_tideways_api_key}}",
+        "name": "{{ ansistrano_git_result.after|truncate(7, true, '') }}",
+        "type": "release",
+        "environment": "{{ application_environment }}"
+      }
+  when: ansistrano_git_result.after != ansistrano_git_result.before
+  ignore_errors: True
