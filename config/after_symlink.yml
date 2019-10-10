@@ -13,5 +13,8 @@
 - include_tasks: "../../lephare.ansible-deploy/config/steps/sentry_notify.yml"
   when: lephare_sentry_notify
 
+- include_tasks: "../../lephare.ansible-deploy/config/steps/tideways.yml"
+  when: lephare_tideways_notify
+
 - include_tasks: "../../lephare.ansible-deploy/config/steps/slack_notify.yml"
   when: lephare_slack_notify

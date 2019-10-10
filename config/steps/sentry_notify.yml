@@ -32,6 +32,6 @@
     headers:
       Authorization: "Bearer {{ lephare_sentry_token }}"
     body: |
-      {"environment": "{{ lephare_sentry_environment }}"}
+      {"environment": "{{ application_environment|default(lephare_sentry_environment) }}"}
   when: sentry_create_release_result.status == 201
   ignore_errors: True
