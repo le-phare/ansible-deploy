@@ -60,5 +60,3 @@ lephare_couscous_documentation_path: docs
 lephare_couscous_target: "{{ lephare_document_root_path }}/docs"
 lephare_couscous_baseUrl: "https://{{ inventory_hostname }}/docs"
 lephare_couscous_self_update: true
-
-lephare_test_server: false
