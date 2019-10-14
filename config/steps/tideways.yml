@@ -5,7 +5,7 @@
     body_format: json
     body: |
       {
-        "apiKey": "{{ lephare_tideways_api_key}}",
+        "apiKey": "{{ lephare_tideways_api_key }}",
         "name": "{{ ansistrano_git_result.after|truncate(7, true, '') }}",
         "type": "release",
         "environment": "{{ application_environment }}"
