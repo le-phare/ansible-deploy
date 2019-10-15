@@ -3,5 +3,3 @@
 - src: https://github.com/le-phare/ansible-deploy
   name: lephare.ansible-deploy
   version: master
-- name: degoss
-  src: naftulikay.degoss
