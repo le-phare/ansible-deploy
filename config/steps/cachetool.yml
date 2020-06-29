@@ -28,8 +28,7 @@
 
 - name: LEPHARE - Install cachetool {{ cachetool_version }}
   get_url: url=http://gordalina.github.io/cachetool/downloads/cachetool-{{ cachetool_version }}.phar dest={{ lephare_cachetool_path }} mode=0755 validate_certs=no force=no
-  when: not cachetool_file.stat.exists and cachetool_version != 'latest'
-
+  when: cachetool_version != 'latest'
 
 - name: LEPHARE - Run cachetool opcache:reset
   shell: chdir={{ansistrano_release_path.stdout}}
