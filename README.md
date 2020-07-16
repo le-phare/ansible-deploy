@@ -28,6 +28,7 @@ The defaults vars declared in this module:
     lephare_rollbar_environment: production
 
     lephare_sentry_notify: false
+    lephare_sentry_organization: le-phare
     lephare_sentry_environment: production
 
     lephare_slack_notify: false

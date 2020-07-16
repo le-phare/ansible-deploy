@@ -18,7 +18,10 @@ lephare_cachetool_apcu_clear: true
 lephare_cachetool_scheme: https
 
 lephare_rollbar_notify: false
+
 lephare_sentry_notify: false
+lephare_sentry_organization: le-phare
+
 lephare_tideways_notify: false
 
 lephare_slack_notify: false
