@@ -1,7 +1,38 @@
-FROM williamyeh/ansible:alpine3
+FROM alpine
 
-RUN apk update \
-  && apk add postgresql git mysql-client npm
+ENV ANSIBLE_PIPELINING=true
+ENV ANSIBLE_PERSISTENT_CONTROL_PATH_DIR=/tmp/ansible-ssh-%%h-%%p-%%r
+ENV ANSIBLE_RETRY_FILES_ENABLED=false
+ENV ANSIBLE_STDOUT_CALLBACK=debug
+
+RUN echo "===> Installing sudo to emulate normal OS behavior..."  && \
+    apk --update add sudo                                         && \
+    \
+    \
+    echo "===> Adding Python runtime..."  && \
+    apk --update add python3 py-pip openssl ca-certificates    && \
+    apk --update add --virtual build-dependencies \
+      python3-dev libffi-dev openssl-dev build-base  && \
+    pip install --upgrade pip cffi                            && \
+    \
+    \
+    echo "===> Installing Ansible..."  && \
+    pip install ansible                && \
+    \
+    \
+    echo "===> Installing handy tools (not absolutely required)..."  && \
+    pip install --upgrade pycrypto pywinrm         && \
+    apk --update add sshpass openssh-client rsync postgresql git mysql-client npm  && \
+    \
+    \
+    echo "===> Removing package list..."  && \
+    apk del build-dependencies            && \
+    rm -rf /var/cache/apk/*               && \
+    \
+    \
+    echo "===> Adding hosts for convenience..."  && \
+    mkdir -p /etc/ansible                        && \
+    echo 'localhost' > /etc/ansible/hosts
 
 RUN adduser -u 1000 -D ansible
 USER ansible
@@ -10,7 +41,3 @@ WORKDIR /app
 COPY ./roles.yml /tmp/roles.yml
 
 RUN ansible-galaxy install -r /tmp/roles.yml
-
-ENV ANSIBLE_PIPELINING=true
-ENV ANSIBLE_PERSISTENT_CONTROL_PATH_DIR=/tmp/ansible-ssh-%%h-%%p-%%r
-ENV ANSIBLE_RETRY_FILES_ENABLED=false
