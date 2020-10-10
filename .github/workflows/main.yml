@@ -37,6 +37,7 @@ jobs:
       with:
         push: true
         context: docker
+        file: ./docker/Dockerfile
         tags: lephare/ansible:edge
     
     - name: Image digest
