@@ -8,7 +8,7 @@
       Authorization: "Bearer {{ lephare_sentry_token }}"
     body: |
       {
-        "version": "{{ ansistrano_git_result.after|truncate(7, true, '') }}", 
+        "version": "{{ ansistrano_git_result.after|truncate(12, true, '') }}",
         "projects": ["{{ lephare_sentry_project }}"], 
         "refs": [
           {
@@ -20,12 +20,12 @@
       }
   register: sentry_create_release_result
   changed_when: sentry_create_release_result.status == 201
-  when: ansistrano_git_result.after != ansistrano_git_result.before
+  # when: ansistrano_git_result.after != ansistrano_git_result.before
   ignore_errors: True
 
-- name: LEPHARE - Sentry - Notify deploy
+- name: LEPHARE - Sentry - Create deploy
   uri:
-    url: "https://sentry.io/api/0/organizations/{{ lephare_sentry_organization }}/releases/{{ ansistrano_git_result.after|truncate(7, true, '') }}/deploys/"
+    url: "https://sentry.io/api/0/organizations/{{ lephare_sentry_organization }}/releases/{{ ansistrano_git_result.after|truncate(12, true, '') }}/deploys/"
     method: POST
     body_format: json
     status_code: "201"
