@@ -79,7 +79,7 @@ Dependencies
 ------------
 
   - [cbrunnkvist/ansistrano-symfony-deploy](https://github.com/cbrunnkvist/ansistrano-symfony-deploy)
-  - ansistrano.deploy
+  - [ansistrano.deploy](https://github.com/ansistrano/deploy)
 
 Example Playbook
 ----------------
