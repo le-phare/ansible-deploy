@@ -12,7 +12,7 @@ RUN echo "===> Installing sudo to emulate normal OS behavior..."  && \
     echo "===> Adding Python runtime..."  && \
     apk --update add python3 py-pip openssl ca-certificates    && \
     apk --update add --virtual build-dependencies \
-      python3-dev libffi-dev openssl-dev build-base  && \
+      python3-dev libffi-dev openssl-dev build-base rust cargo && \
     pip install --upgrade pip cffi                            && \
     \
     \
@@ -38,6 +38,6 @@ RUN adduser -u 1000 -D ansible
 USER ansible
 WORKDIR /app
 
-COPY ./roles.yml /tmp/roles.yml
+COPY ./requirements.yml /tmp/requirements.yml
 
-RUN ansible-galaxy install -r /tmp/roles.yml
+RUN ansible-galaxy install -r /tmp/requirements.yml

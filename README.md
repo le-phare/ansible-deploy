@@ -3,6 +3,12 @@ lephare.ansible-deploy
 
 Common deploy tasks for projects made at Le Phare.
 
+Dependencies
+------------
+
+  - [ansistrano.deploy](https://github.com/ansistrano/deploy)
+  - [cbrunnkvist/ansistrano-symfony-deploy](https://github.com/cbrunnkvist/ansistrano-symfony-deploy)
+
 Role Variables
 --------------
 
@@ -74,12 +80,6 @@ Additionnaly, this module change some defaults vars from `cbrunnkvist.ansistrano
     symfony_run_cache_clear_and_warmup: "{{ lephare_run_cache_clear_and_warmup }}"
     symfony_run_doctrine_migrations: "{{ lephare_run_doctrine_migrations }}"
     symfony_console_path: "{{ lephare_console_path }}"
-
-Dependencies
-------------
-
-  - [cbrunnkvist/ansistrano-symfony-deploy](https://github.com/cbrunnkvist/ansistrano-symfony-deploy)
-  - [ansistrano.deploy](https://github.com/ansistrano/deploy)
 
 Example Playbook
 ----------------
