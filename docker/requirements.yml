@@ -7,6 +7,9 @@ roles:
     src: https://github.com/le-phare/ansible-deploy
     version: master
 
+  - name: degoss
+    src: naftulikay.degoss
+
 
 collections:
   - name: community.general

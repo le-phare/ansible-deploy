@@ -1,6 +1,7 @@
 ---
 dependencies:
   - { role: cbrunnkvist.ansistrano-symfony-deploy }
+  - { role: naftulikay.degoss }
 
 galaxy_info:
   author: Erwan Richard
