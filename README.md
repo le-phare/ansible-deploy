@@ -1,16 +1,13 @@
-lephare.ansible-deploy
-======================
+# lephare.ansible-deploy
 
 Common deploy tasks for projects made at Le Phare.
 
-Dependencies
-------------
+## Dependencies
 
   - [ansistrano.deploy](https://github.com/ansistrano/deploy)
   - [cbrunnkvist/ansistrano-symfony-deploy](https://github.com/cbrunnkvist/ansistrano-symfony-deploy)
 
-Role Variables
---------------
+## Role Variables
 
 The defaults vars declared in this module:
 
@@ -81,8 +78,7 @@ Additionnaly, this module change some defaults vars from `cbrunnkvist.ansistrano
     symfony_run_doctrine_migrations: "{{ lephare_run_doctrine_migrations }}"
     symfony_console_path: "{{ lephare_console_path }}"
 
-Example Playbook
-----------------
+## Example Playbook
 
     ---
     - name: Deploy app
@@ -99,8 +95,7 @@ Example Playbook
         ansistrano_shared_files:
           - app/config/parameters.yml
 
-Use with docker
----------------
+## Use with docker
 
 We use a docker image `lephare/ansible` to deploy our projects.
 
@@ -114,8 +109,7 @@ We use a docker image `lephare/ansible` to deploy our projects.
         -i ansible/production/hosts \
         ansible/deploy.yml
 
-Contribute
-----------
+## Contribute
 
 Clone or fork the repository and make your change in a branch.
 
@@ -123,6 +117,5 @@ You can test your modification by build your own docker image. You need to edit 
 
     $ docker build -t lephare/ansible ./docker --no-cache
 
-License
--------
+## License
 MIT

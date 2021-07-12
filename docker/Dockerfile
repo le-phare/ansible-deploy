@@ -21,8 +21,8 @@ RUN echo "===> Installing sudo to emulate normal OS behavior..."  && \
     \
     \
     echo "===> Installing handy tools (not absolutely required)..."  && \
-    pip install --upgrade pycrypto pywinrm         && \
-    apk --update add sshpass openssh-client rsync postgresql git mysql-client npm  && \
+    pip install --upgrade pycrypto pywinrm                           && \
+    apk --update add sshpass openssh-client rsync postgresql git mysql-client npm make && \
     \
     \
     echo "===> Removing package list..."  && \
