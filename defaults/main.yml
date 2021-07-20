@@ -29,6 +29,13 @@ lephare_slack_notify_username: Hubert
 lephare_slack_notify_channel: "#general"
 lephare_slack_notify_icon_url: https://faros.lephare.com/public/img/hubert.png
 
+lephare_mail_notify: false
+lephare_mail_to: []
+lephare_mail_cc: []
+lephare_mail_notify_body: ""
+lephare_mail_notify_subject: ""
+lephare_mail_notify_headers_reply_to: ""
+
 lephare_crontab_install: false
 lephare_crontab_path: "{{ ansistrano_release_path.stdout }}/app/Resources/crontab"
 

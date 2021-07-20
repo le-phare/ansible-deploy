@@ -1,0 +1,45 @@
+- name: get latest commit message
+  shell: 'git log {{ ansistrano_git_branch }} --pretty="%s" -n1'
+  args:
+    chdir: "{{ ansistrano_deploy_to }}/{{ ansistrano_repo_dir }}"
+  register: latest_commit_message
+
+- name: get latest commit author
+  shell: 'git log {{ ansistrano_git_branch }} --pretty="%an" -n1'
+  args:
+    chdir: "{{ ansistrano_deploy_to }}/{{ ansistrano_repo_dir }}"
+  register: latest_commit_author
+
+# See https://docs.ansible.com/ansible/latest/collections/community/general/mail_module.html
+# Sending an e-mail using StartTLS to the remote machine
+- name: Sending an e-mail using StartTLS to the remote machine
+  community.general.mail:
+    host: localhost
+    port: 25
+    to: "{{ lephare_mail_notify_to }}"
+    cc: "{{ lephare_mail_notify_cc }}"
+    headers:
+      - "Reply-To={{ lephare_mail_notify_headers_reply_to }}"
+    subject: "{{ lephare_mail_notify_subject }}"
+    subtype: html
+    body: '
+    <div>
+      <div>Déploiement terminé</div>
+      <div style="margin-top: 8px;">
+        <div style="font-weight: bold; padding: 4px;">Environnement</div>
+        <div style="padding-left: 4px;">{{ application_environment|capitalize }}</div>
+      </div>
+      <div style="margin-top: 8px;">
+        <div style="font-weight: bold; padding: 4px;">Release</div>
+        <div style="padding-left: 4px;">{{ ansistrano_git_result.after|truncate(7, True, '') }}</div>
+      </div>
+      <div style="margin-top: 8px;">
+        <div style="font-weight: bold; padding: 4px;">Dernière modification</div>
+        <div style="padding-left: 4px;">`{{ latest_commit_message.stdout }}` par _{{ latest_commit_author.stdout }}_</div>
+      </div>
+      <div style="margin-top: 8px;">
+        <a href="{{ lephare_cachetool_scheme }}://{{ inventory_hostname }}" style="font-weight: bold; padding: 4px;">Voir le site</a>
+      </div>
+    </div>
+    '
+    secure: starttls

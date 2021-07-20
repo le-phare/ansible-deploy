@@ -18,3 +18,6 @@
 
 - include_tasks: "../../lephare.ansible-deploy/config/steps/slack_notify.yml"
   when: lephare_slack_notify
+
+- include_tasks: "../../lephare.ansible-deploy/config/steps/mail_notify.yml"
+  when: lephare_mail_notify
