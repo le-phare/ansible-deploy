@@ -1,0 +1,40 @@
+- name: get latest commit message
+  shell: 'git log {{ ansistrano_git_branch }} --pretty="%s" -n1'
+  args:
+    chdir: "{{ ansistrano_deploy_to }}/{{ ansistrano_repo_dir }}"
+  register: latest_commit_message
+
+- name: get latest commit author
+  shell: 'git log {{ ansistrano_git_branch }} --pretty="%an" -n1'
+  args:
+    chdir: "{{ ansistrano_deploy_to }}/{{ ansistrano_repo_dir }}"
+  register: latest_commit_author
+
+- name: Notify Microsoft Teams channel deploy
+  uri:
+    url: "https://graph.microsoft.com/v1.0/teams/{{ lephare_microsoft_teams_notify_team_id }}/{{ lephare_microsoft_teams_notify_channel_id }}/messages"
+    method: POST
+    body: |
+      {
+        "contentType": "html",
+        "content": "
+          <div>
+              <div>Déploiement terminé</div>
+              <div style="margin-top: 8px;">
+                  <div style="font-weight: bold; padding: 4px;">Environnement</div>
+                  <div style="padding-left: 4px;">{{ application_environment|capitalize }}</div>
+              </div>
+              <div style="margin-top: 8px;">
+                  <div style="font-weight: bold; padding: 4px;">Release</div>
+                  <div style="padding-left: 4px;">{{ ansistrano_git_result.after|truncate(7, True, '') }}</div>
+              </div>
+              <div style="margin-top: 8px;">
+                  <div style="font-weight: bold; padding: 4px;">Dernière modification</div>
+                  <div style="padding-left: 4px;">`{{ latest_commit_message.stdout }}` par _{{ latest_commit_author.stdout }}_</div>
+              </div>
+              <div style="margin-top: 8px;">
+                  <a href="{{ lephare_cachetool_scheme }}://{{ inventory_hostname }}" style="font-weight: bold; padding: 4px;">Voir le site</a>
+              </div>
+          </div>
+      "
+      }

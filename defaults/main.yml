@@ -25,6 +25,7 @@ lephare_sentry_organization: le-phare
 lephare_tideways_notify: false
 
 lephare_slack_notify: false
+lephare_microsoft_teams_notify: false
 lephare_slack_notify_username: Hubert
 lephare_slack_notify_channel: "#general"
 lephare_slack_notify_icon_url: https://faros.lephare.com/public/img/hubert.png
