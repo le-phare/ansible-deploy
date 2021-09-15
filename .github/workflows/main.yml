@@ -41,6 +41,11 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+
     - name: Build and push
       uses: docker/build-push-action@v2
       id: docker_build
@@ -49,7 +54,7 @@ jobs:
         file: ./docker/Dockerfile
         push: ${{ github.event_name != 'pull_request' }}
         build-args: |
-          ANSIBLE_DEPLOY_BRANCH=${GITHUB_REF#refs/heads/}
+          ANSIBLE_DEPLOY_BRANCH=${{ steps.extract_branch.outputs.branch }}
         tags: ${{ steps.docker_meta.outputs.tags }}
         labels: ${{ steps.docker_meta.outputs.labels }}
 
