@@ -48,6 +48,8 @@ jobs:
         context: docker
         file: ./docker/Dockerfile
         push: ${{ github.event_name != 'pull_request' }}
+        build-args: |
+          ANSIBLE_DEPLOY_BRANCH=${GITHUB_REF#refs/heads/}
         tags: ${{ steps.docker_meta.outputs.tags }}
         labels: ${{ steps.docker_meta.outputs.labels }}
 
