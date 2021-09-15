@@ -5,8 +5,6 @@ roles:
 
   - name: lephare.ansible-deploy
     src: https://github.com/le-phare/ansible-deploy
-    version: master
-
 
 collections:
   - name: community.general
