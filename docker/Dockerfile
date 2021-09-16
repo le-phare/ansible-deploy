@@ -34,10 +34,15 @@ RUN echo "===> Installing sudo to emulate normal OS behavior..."  && \
     mkdir -p /etc/ansible                        && \
     echo 'localhost' > /etc/ansible/hosts
 
+
+ARG ANSIBLE_DEPLOY_BRANCH
+ENV ANSIBLE_DEPLOY_BRANCH=${ANSIBLE_DEPLOY_BRANCH:-master}
+
 RUN adduser -u 1000 -D ansible
-USER ansible
 WORKDIR /app
 
 COPY ./requirements.yml /tmp/requirements.yml
+RUN sed -i -r "s/(name: lephare.ansible-deploy)/\1\n    version: $ANSIBLE_DEPLOY_BRANCH/g" /tmp/requirements.yml
 
+USER ansible
 RUN ansible-galaxy install -r /tmp/requirements.yml

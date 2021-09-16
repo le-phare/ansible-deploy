@@ -1,0 +1,10 @@
+- name: Dump an existing database to a file (with compression)
+  when: lephare_dump_database
+  community.postgresql.postgresql_db:
+    name: "{{ app_database_name }}"
+    login_host: "{{ app_database_login_host | default(omit) }}"
+    login_port: "{{ app_database_login_port | int | default(omit) }}"
+    login_user: "{{ app_database_user }}"
+    login_password: "{{ app_database_password }}"
+    state: dump
+    target: "{{ ansistrano_deploy_to }}/{{ ansistrano_current_dir }}/{{ db_pull_remote_database_name }}.sql.gz"
