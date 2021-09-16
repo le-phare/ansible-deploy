@@ -2,9 +2,10 @@
   when: lephare_dump_database
   community.postgresql.postgresql_db:
     name: "{{ app_database_name }}"
-    login_port: 5432
+    # TODO: default(omit)
+    login_port: "{{ app_database_login_port | int }}
     login_user: "{{ app_database_user }}"
     login_password: "{{ app_database_password }}"
-    port: 5432
+    port: "{{ app_database_port | int }}
     state: dump
     target: "{{ ansistrano_deploy_to }}/{{ ansistrano_current_dir }}/{{ db_pull_remote_database_name }}.sql.gz"
