@@ -3,7 +3,6 @@
   community.postgresql.postgresql_db:
     name: "{{ app_database_name }}"
     login_host: "{{ app_database_login_host | default(omit) }}"
-    login_port: "{{ app_database_login_port | int | default(omit) }}"
     login_user: "{{ app_database_user }}"
     login_password: "{{ app_database_password }}"
     port: "{{ app_database_port | int | default(omit) }}"
