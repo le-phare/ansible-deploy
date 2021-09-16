@@ -2,7 +2,7 @@
   when: lephare_dump_database
   community.postgresql.postgresql_db:
     name: "{{ app_database_name }}"
-    login_port: "{{ app_database_host }}"
+    login_port: 5432
     login_user: "{{ app_database_user }}"
     login_password: "{{ app_database_password }}"
     port: 5432
