@@ -95,6 +95,29 @@ Additionnaly, this module change some defaults vars from `cbrunnkvist.ansistrano
         ansistrano_shared_files:
           - app/config/parameters.yml
 
+## Optional tasks
+
+### Dump database before composer
+
+**NB: Ony works with postgres installed on the app node**
+
+Backup la base de données de la version courante lors du déploiement. Un fichier portant le nom de
+la base de données est placer dans la release courante.
+
+Enable task:
+```yaml
+lephare_dump_database: true
+```
+
+Set vars:
+```yaml
+app_database_name: "{{ db_pull_remote_database_name }}" # required
+app_database_login_host:  "locahost" # optional
+app_database_user: "{{ db_pull_remote_database_user }}" # required
+app_database_password: "{{ db_pull_remote_database_password }}" # required
+app_database_login_port: 5432 # optional, default 5432
+```
+
 ## Use with docker
 
 We use a docker image `lephare/ansible` to deploy our projects.
