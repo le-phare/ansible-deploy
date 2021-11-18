@@ -33,5 +33,3 @@
             text: Voir le site
             url: "{{ lephare_cachetool_scheme }}://{{ inventory_hostname }}"
             style: primary
-
-

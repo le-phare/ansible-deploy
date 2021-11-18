@@ -9,7 +9,7 @@
     body: |
       {
         "version": "{{ ansistrano_git_result.after|truncate(12, true, '') }}",
-        "projects": ["{{ lephare_sentry_project }}"], 
+        "projects": ["{{ lephare_sentry_project }}"],
         "refs": [
           {
             "repository": "{{ lephare_sentry_repository }}",
@@ -33,6 +33,6 @@
       Authorization: "Bearer {{ lephare_sentry_token }}"
     body: |
       {"environment": "{{ lephare_sentry_environment|default(application_environment) }}"}
-  when: 
-    - sentry_create_release_result is succeeded 
+  when:
+    - sentry_create_release_result is succeeded
   ignore_errors: True

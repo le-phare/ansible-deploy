@@ -18,4 +18,3 @@
     recursive: true
     state: present
   loop: "{{ query('nested', lephare_permission_paths, lephare_permission_users) }}"
-
