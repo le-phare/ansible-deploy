@@ -2,6 +2,7 @@
 roles:
   - name: db-pull
     src: https://github.com/le-phare/ansible-db-pull
+    version: v1.1.0
 
   - name: lephare.ansible-deploy
     src: https://github.com/le-phare/ansible-deploy
