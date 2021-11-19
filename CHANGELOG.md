@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://github.com/le-phare/ansible-deploy/compare/v1.1.2...v1.1.3) (2021-11-19)
+
+
+### Bug Fixes
+
+* **hooks:** add a variable `lephare_symfony_before_composer_tasks_file` to hook before composer task ([98f7518](https://github.com/le-phare/ansible-deploy/commit/98f75186dc58211b508a5174c59bd64671c7e3f0))
+
 ### [1.1.2](https://github.com/le-phare/ansible-deploy/compare/v1.1.1...v1.1.2) (2021-11-18)
 
 ### [1.1.1](https://github.com/le-phare/ansible-deploy/compare/v1.1.0...v1.1.1) (2021-11-18)
