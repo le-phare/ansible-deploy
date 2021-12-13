@@ -26,6 +26,7 @@ The defaults vars declared in this module:
     lephare_cachetool_opcache_reset: true
     lephare_cachetool_apcu_clear: true
     lephare_cachetool_scheme: https
+    lephare_cachetool_version: "7.0.0" # default latest
 
     lephare_rollbar_notify: true
     lephare_rollbar_environment: production

@@ -10,7 +10,7 @@
   changed_when: cachetool_self_update_result.stderr
 
 - name: LEPHARE - Install cachetool
-  get_url: url=http://gordalina.github.io/cachetool/downloads/cachetool.phar dest={{ lephare_cachetool_path }} mode=0755 validate_certs=no force=no
+  get_url: url=http://gordalina.github.io/cachetool/downloads/cachetool{{ lephare_cachetool_version | default('') }}.phar dest={{ lephare_cachetool_path }} mode=0755 validate_certs=no force=no
   when: not cachetool_file.stat.exists
 
 - name: LEPHARE - Run cachetool opcache:reset
