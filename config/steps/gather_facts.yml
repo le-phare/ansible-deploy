@@ -1,0 +1,13 @@
+- name: LEPHARE - PHP Version
+  shell: php -v | awk '/^PHP / { print $2 }'
+  register: php_version
+
+- name: LEPHARE - PHP - Extensions
+  shell: php -m | awk '/^[A-Za-z]+$/ { print tolower($1) }'
+  register: php_extensions
+
+- name: LEPHARE - Set facts
+  set_fact:
+    php_facts:
+      version: "{{ php_version.stdout }}"
+      extensions: "{{ php_extensions.stdout_lines }}"
