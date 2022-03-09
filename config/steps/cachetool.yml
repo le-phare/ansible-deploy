@@ -38,13 +38,19 @@
   ignore_errors: true
   shell: chdir={{ ansistrano_release_path.stdout }}
     {{ symfony_php_path }} {{ lephare_cachetool_path }} self-update
-  when: cachetool_file.stat.exists and lephare_cachetool_self_update and cachetool_facts.version == 'latest'
+  when: cachetool_file.stat.exists and lephare_cachetool_self_update and cachetool_facts.required_version == 'latest'
   register: cachetool_self_update_result
   changed_when: cachetool_self_update_result.stderr
 
+- name: LEPHARE - get cachetool version
+  shell: chdir={{ ansistrano_release_path.stdout }}
+    {{ symfony_php_path }} {{ lephare_cachetool_path }} --version | awk '/^CacheTool / { print $2 }'
+  register: cachetool_version
+  when: cachetool_file.stat.exists
+
 - name: LEPHARE - Run cachetool opcache:reset
   shell: chdir={{ ansistrano_release_path.stdout }}
-    {{ symfony_php_path }} {{ lephare_cachetool_path }} opcache:reset --web{{ '=SymfonyHttpClient' if cachetool_facts.required_version is version('7.1', '>=') }} --web-path={{ lephare_document_root_path }} --web-url={{ lephare_cachetool_scheme }}://{{ inventory_hostname }}
+    {{ symfony_php_path }} {{ lephare_cachetool_path }} opcache:reset --web{{ '=SymfonyHttpClient' if cachetool_version.stdout is version('7.1', '>=') }} --web-path={{ lephare_document_root_path }} --web-url={{ lephare_cachetool_scheme }}://{{ inventory_hostname }}
   when: lephare_cachetool_opcache_reset
   retries: 10
   delay: 15
@@ -53,7 +59,7 @@
 
 - name: LEPHARE - Run cachetool apcu:cache:clear
   shell: chdir={{ ansistrano_release_path.stdout }}
-    {{ symfony_php_path }} {{ lephare_cachetool_path }} apcu:cache:clear --web{{ '=SymfonyHttpClient' if cachetool_facts.required_version is version('7.1', '>=') }} --web-path={{ lephare_document_root_path }} --web-url={{ lephare_cachetool_scheme }}://{{ inventory_hostname }}
+    {{ symfony_php_path }} {{ lephare_cachetool_path }} apcu:cache:clear --web{{ '=SymfonyHttpClient' if cachetool_version.stdout is version('7.1', '>=') }} --web-path={{ lephare_document_root_path }} --web-url={{ lephare_cachetool_scheme }}://{{ inventory_hostname }}
   when: lephare_cachetool_apcu_clear
   retries: 10
   delay: 15
