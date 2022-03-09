@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/le-phare/ansible-deploy/compare/v1.1.3...v1.2.0) (2022-03-09)
+
+
+### Features
+
+* **cachetool:** guess the correct cachetool version to use based on php_facts ([#16](https://github.com/le-phare/ansible-deploy/issues/16)) ([3e9401c](https://github.com/le-phare/ansible-deploy/commit/3e9401ccd06d7dd704d82afc084e4f6a141be644))
+
 ### [1.1.3](https://github.com/le-phare/ansible-deploy/compare/v1.1.2...v1.1.3) (2021-11-19)
 
 
