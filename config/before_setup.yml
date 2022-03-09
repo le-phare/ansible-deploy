@@ -1,0 +1,1 @@
+- include_tasks: "../../lephare.ansible-deploy/config/steps/gather_facts.yml"
