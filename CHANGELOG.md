@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/le-phare/ansible-deploy/compare/v1.2.2...v1.2.3) (2022-03-14)
+
+
+### Bug Fixes
+
+* **cachetool:** update failure check with the correct variable ([e236e17](https://github.com/le-phare/ansible-deploy/commit/e236e17512d18e323c753b62c6deda2083756d51))
+
 ### [1.2.2](https://github.com/le-phare/ansible-deploy/compare/v1.2.1...v1.2.2) (2022-03-14)
 
 
