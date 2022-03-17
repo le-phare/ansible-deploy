@@ -1,7 +1,7 @@
 - name: LEPHARE - Check for cachetool.phar
   stat: path={{ lephare_cachetool_path }}
   register: cachetool_file
-  failed_when: cachetool_file.stat.isdir
+  failed_when: cachetool_file.stat.exists and cachetool_file.stat.isdir
 
 - name: LEPHARE - get cachetool version
   shell: chdir={{ ansistrano_release_path.stdout }}
