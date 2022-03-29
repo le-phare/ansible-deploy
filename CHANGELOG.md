@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/le-phare/ansible-deploy/compare/v1.2.4...v1.3.0) (2022-03-29)
+
+
+### Features
+
+* **composer:** allow to configure composer private registry authentication ([#20](https://github.com/le-phare/ansible-deploy/issues/20)) ([5c4b73d](https://github.com/le-phare/ansible-deploy/commit/5c4b73d86b53c9a4ff4212d3b513dbe58b6c01cb))
+
 ### [1.2.4](https://github.com/le-phare/ansible-deploy/compare/v1.2.3...v1.2.4) (2022-03-17)
 
 
