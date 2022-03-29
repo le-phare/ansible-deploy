@@ -11,3 +11,5 @@
     php_facts:
       version: "{{ php_version.stdout }}"
       extensions: "{{ php_extensions.stdout_lines }}"
+    composer_facts:
+      home: "{{ lookup('env', 'COMPOSER_HOME') | default('~/.composer', true) }}"
