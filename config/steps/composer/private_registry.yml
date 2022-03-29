@@ -1,0 +1,14 @@
+- name: LEPHARE | COMPOSER | Ensure configuration directory exists
+  file:
+    path: "{{ composer_facts.home }}"
+    state: directory
+    recurse: yes
+    mode: 0755
+  register: composer_home_directory
+
+- name: LEPHARE | COMPOSER | Setup private registry
+  template:
+    src: auth.json.j2
+    dest: "{{ composer_facts.home }}/auth.json"
+    mode: 0600
+  when: lephare_packagist_com_token is defined

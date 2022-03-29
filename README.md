@@ -7,6 +7,12 @@ Common deploy tasks for projects made at Le Phare.
   - [ansistrano.deploy](https://github.com/ansistrano/deploy)
   - [cbrunnkvist/ansistrano-symfony-deploy](https://github.com/cbrunnkvist/ansistrano-symfony-deploy)
 
+## Documentation
+
+* [Workflow overview](docs/workflow.md)
+* Composer:
+  * [Private registry](docs/composer/private-registry.md)
+
 ## Role Variables
 
 The defaults vars declared in this module:
