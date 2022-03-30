@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/le-phare/ansible-deploy/compare/v1.3.0...v1.3.1) (2022-03-30)
+
+
+### Bug Fixes
+
+* **composer:** update template path based on directory location ([#21](https://github.com/le-phare/ansible-deploy/issues/21)) ([caeae0f](https://github.com/le-phare/ansible-deploy/commit/caeae0f8118f90097e0b715b744d7c7e8bff662e))
+
 ## [1.3.0](https://github.com/le-phare/ansible-deploy/compare/v1.2.4...v1.3.0) (2022-03-29)
 
 
