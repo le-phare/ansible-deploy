@@ -8,7 +8,7 @@
 
 - name: LEPHARE | COMPOSER | Setup private registry
   template:
-    src: auth.json.j2
-    dest: "{{ composer_facts.home }}/auth.json"
+    src: composer/auth.json.j2
+    dest: "{{ composer_home_directory.path }}/auth.json"
     mode: 0600
   when: lephare_packagist_com_token is defined
