@@ -11,3 +11,10 @@
     login_password: "{{ app_database_password }}"
     state: dump
     target: "{{ ansistrano_deploy_to }}/{{ ansistrano_current_dir }}/{{ db_pull_remote_database_name }}.sql.gz"
+
+- name: Setup {{ symfony_env }} secrets decrypt key
+  template:
+    src: symfony/secrets_private.php.j2
+    dest: "{{ ansistrano_release_path.stdout }}/config/secrets/{{ symfony_env }}/{{ symfony_env }}.decrypt.private.php"
+    mode: 0644
+  when: symfony_secret_private_key is defined

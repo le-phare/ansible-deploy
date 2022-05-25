@@ -12,6 +12,8 @@ Common deploy tasks for projects made at Le Phare.
 * [Workflow overview](docs/workflow.md)
 * Composer:
   * [Private registry](docs/composer/private-registry.md)
+* Symfony:
+  * [Secrets](docs/symfony/secrets.md)
 
 ## Role Variables
 
