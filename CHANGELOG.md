@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/le-phare/ansible-deploy/compare/v1.3.1...v1.4.0) (2022-06-15)
+
+
+### Features
+
+* add support for symfony secrets ([#22](https://github.com/le-phare/ansible-deploy/issues/22)) ([6c7014d](https://github.com/le-phare/ansible-deploy/commit/6c7014d6a680561151f61a31df43dc69498e51ec))
+* **cachetool:** allows to pass arbitrary options to cachetool commands ([#23](https://github.com/le-phare/ansible-deploy/issues/23)) ([1878451](https://github.com/le-phare/ansible-deploy/commit/1878451e29fd0914894fc184fa53e7470ad6dec5))
+
 ### [1.3.1](https://github.com/le-phare/ansible-deploy/compare/v1.3.0...v1.3.1) (2022-03-30)
 
 
