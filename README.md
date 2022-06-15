@@ -10,10 +10,12 @@ Common deploy tasks for projects made at Le Phare.
 ## Documentation
 
 * [Workflow overview](docs/workflow.md)
+* [Cachetool](docs/cachetool.md)
 * Composer:
   * [Private registry](docs/composer/private-registry.md)
 * Symfony:
   * [Secrets](docs/symfony/secrets.md)
+
 
 ## Role Variables
 

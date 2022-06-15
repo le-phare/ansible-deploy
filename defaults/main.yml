@@ -16,6 +16,7 @@ lephare_cachetool_stat_clear: true
 lephare_cachetool_opcache_reset: true
 lephare_cachetool_apcu_clear: true
 lephare_cachetool_scheme: https
+lephare_cachetool_options: ""
 
 lephare_rollbar_notify: false
 
@@ -37,7 +38,7 @@ lephare_prevent_robots_indexation: false
 lephare_http_basic_secure: false
 lephare_http_basic_whitelist_referer: []
 lephare_http_basic_whitelist_ip: []
-lephare_http_basic_whitelist_path: [ "^/cachetool-.*" ]
+lephare_http_basic_whitelist_path: ["^/cachetool-.*"]
 
 lephare_run_assetic_dump: false
 lephare_run_assets_install: true
@@ -47,14 +48,18 @@ lephare_console_path: bin/console
 lephare_composer_options: "--no-dev --optimize-autoloader --apcu-autoloader --no-interaction"
 
 lephare_cloudfront_invalidate: false
-lephare_cloudfront_path: [ '/*' ]
+lephare_cloudfront_path: ["/*"]
 
 lephare_install_adminer: false
 lephare_install_adminer_path: "{{ lephare_document_root_path }}"
 
 lephare_permission_set: false
-lephare_permission_paths: [ "{{ ansistrano_release_path.stdout }}/var/cache", "{{ ansistrano_shared_path }}/var/logs" ]
-lephare_permission_users: [ "www-data", "{{ ansible_user }}" ]
+lephare_permission_paths:
+  [
+    "{{ ansistrano_release_path.stdout }}/var/cache",
+    "{{ ansistrano_shared_path }}/var/logs",
+  ]
+lephare_permission_users: ["www-data", "{{ ansible_user }}"]
 
 lephare_couscous_enable: false
 lephare_couscous_scheme: https
