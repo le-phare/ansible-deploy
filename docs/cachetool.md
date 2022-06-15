@@ -10,7 +10,7 @@ During `lephare_after_symlink_tasks_file`
 
 ## Description
 
-Execute [cachetool](https://github.com/gordalina/cachetool) to reset opcache and apc cache after new release as been activated
+Execute [cachetool](https://github.com/gordalina/cachetool) to reset opcache and apc cache after new release has been activated
 
 ## Variables
 
