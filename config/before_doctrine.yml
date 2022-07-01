@@ -1,0 +1,2 @@
+- include_tasks: "../../lephare.ansible-deploy/config/steps/symfony/messenger/before_doctrine.yml"
+  when: symfony_messenger_enable

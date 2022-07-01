@@ -14,6 +14,7 @@ Common deploy tasks for projects made at Le Phare.
 * Composer:
   * [Private registry](docs/composer/private-registry.md)
 * Symfony:
+  * [Messenger](docs/symfony/messenger.md)
   * [Secrets](docs/symfony/secrets.md)
 
 
