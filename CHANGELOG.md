@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/le-phare/ansible-deploy/compare/v1.4.0...v1.5.0) (2022-07-02)
+
+
+### Features
+
+* **symfony/messenger:** add support for messenger scheduling ([#24](https://github.com/le-phare/ansible-deploy/issues/24)) ([c7be08e](https://github.com/le-phare/ansible-deploy/commit/c7be08ecefbc9f78026694d8c2b8546bc288755c))
+
 ## [1.4.0](https://github.com/le-phare/ansible-deploy/compare/v1.3.1...v1.4.0) (2022-06-15)
 
 
