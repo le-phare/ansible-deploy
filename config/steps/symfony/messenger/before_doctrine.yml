@@ -1,0 +1,3 @@
+- name: LEPHARE | MESSENGER | stop workers
+  shell: chdir={{ ansistrano_release_path.stdout }}
+    APP_ENV={{symfony_env}} {{symfony_php_path}} {{symfony_console_path}} messenger:stop-workers --no-interaction

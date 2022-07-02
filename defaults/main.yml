@@ -70,3 +70,11 @@ lephare_couscous_baseUrl: "https://{{ inventory_hostname }}/docs"
 lephare_couscous_self_update: true
 
 lephare_dump_database: false
+
+# Symfony messenger defaults
+symfony_messenger_enable: false
+symfony_messenger_strategy: crontab
+symfony_messenger_queues:
+  - name: default
+    scale: 1
+    time_limit: 7
