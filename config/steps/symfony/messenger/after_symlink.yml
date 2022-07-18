@@ -6,7 +6,7 @@
   ansible.builtin.cron:
     name: "Messenger worker schedule for {{ item.name }} #{{ ansible_loop.index }}"
     minute: "*/{{ item.time_limit }}"
-    job: APP_ENV={{ symfony_env }} {{ symfony_php_path }} {{ ansistrano_release_path.stdout }}/{{ symfony_console_path }} messenger:consume {{ item.name }} --no-interaction --time-limit={{ item.time_limit * 60 }} --quiet
+    job: cd {{ ansistrano_release_path.stdout }}; APP_ENV={{ symfony_env }} {{ symfony_php_path }} {{ symfony_console_path }} messenger:consume {{ item.name }} --no-interaction --time-limit={{ item.time_limit * 60 }} --quiet
   loop: "{{ symfony_messenger_queues | list }}"
   loop_control:
     extended: true
