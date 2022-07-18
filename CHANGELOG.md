@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/le-phare/ansible-deploy/compare/v1.5.0...v1.5.1) (2022-07-18)
+
+
+### Bug Fixes
+
+* **syfmony/messenger:** change working dir to run messenger command ([f063c0c](https://github.com/le-phare/ansible-deploy/commit/f063c0c1dca04498ce7123476b0ea9e91b6fda87))
+
 ## [1.5.0](https://github.com/le-phare/ansible-deploy/compare/v1.4.0...v1.5.0) (2022-07-02)
 
 
