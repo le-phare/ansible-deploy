@@ -1,6 +1,10 @@
 - include_tasks: "../../lephare.ansible-deploy/config/steps/composer/private_registry.yml"
   when: lephare_packagist_com_token is defined
 
+- name: Set release environment variable
+  shell: chdir={{ansistrano_release_path.stdout}}
+    echo "APP_RELEASE={{ ansistrano_git_result.after|truncate(12, true, '') }}" | tee -a .env.{{ symfony_env }}
+
 - name: Dump an existing database to a file (with compression)
   when: lephare_dump_database
   community.postgresql.postgresql_db:
