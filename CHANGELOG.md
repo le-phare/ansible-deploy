@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/le-phare/ansible-deploy/compare/v1.5.1...v1.6.0) (2022-10-04)
+
+
+### Features
+
+* **composer:** dump environment during deployment  ([#25](https://github.com/le-phare/ansible-deploy/issues/25)) ([70369ed](https://github.com/le-phare/ansible-deploy/commit/70369ed0e335a2dc677ac3c26aca181491b6c6e1))
+
 ### [1.5.1](https://github.com/le-phare/ansible-deploy/compare/v1.5.0...v1.5.1) (2022-07-18)
 
 
