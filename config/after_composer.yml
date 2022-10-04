@@ -1,0 +1,2 @@
+- include_tasks: "../../lephare.ansible-deploy/config/steps/composer/dump_env.yml"
+  when: lephare_composer_dump_environment
