@@ -1,9 +1,9 @@
 - name: LEPHARE - PHP Version
-  shell: php -v | awk '/^PHP / { print $2 }'
+  shell: "{{ symfony_php_path | default('php', true) }} -v | awk '/^PHP / { print $2 }'"
   register: php_version
 
 - name: LEPHARE - PHP - Extensions
-  shell: php -m | awk '/^[A-Za-z]+$/ { print tolower($1) }'
+  shell: "{{ symfony_php_path | default('php', true) }} -m | awk '/^[A-Za-z]+$/ { print tolower($1) }'"
   register: php_extensions
 
 - name: LEPHARE - Set facts
