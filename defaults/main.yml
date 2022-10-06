@@ -17,6 +17,8 @@ lephare_cachetool_opcache_reset: true
 lephare_cachetool_apcu_clear: true
 lephare_cachetool_scheme: https
 lephare_cachetool_options: ""
+lephare_cachetool_retries: 10
+lephare_cachetool_delay: 15
 
 lephare_rollbar_notify: false
 
