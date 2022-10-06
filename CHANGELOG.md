@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.1](https://github.com/le-phare/ansible-deploy/compare/v1.6.0...v1.6.1) (2022-10-06)
+
+
+### Bug Fixes
+
+* **composer:** ignore error if dump-env is not available ([#27](https://github.com/le-phare/ansible-deploy/issues/27)) ([630c589](https://github.com/le-phare/ansible-deploy/commit/630c5894f819b3b79866fd4300fbfe5c05ae5c95))
+* **php:** use given php path to gather facts ([#26](https://github.com/le-phare/ansible-deploy/issues/26)) ([5d9fa7d](https://github.com/le-phare/ansible-deploy/commit/5d9fa7d24df2b6a911f6449b82a52b17c6926554))
+
 ## [1.6.0](https://github.com/le-phare/ansible-deploy/compare/v1.5.1...v1.6.0) (2022-10-04)
 
 
