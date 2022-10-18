@@ -17,7 +17,7 @@ Common deploy tasks for projects made at Le Phare.
 * Symfony:
   * [Messenger](docs/symfony/messenger.md)
   * [Secrets](docs/symfony/secrets.md)
-
+* [Permissions](docs/permissions.md)
 
 ## Role Variables
 
