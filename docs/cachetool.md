@@ -24,3 +24,5 @@ Execute [cachetool](https://github.com/gordalina/cachetool) to reset opcache and
 | lephare_cachetool_apcu_clear    | boolean |  `true`                                        | Clear APCu cache                 |
 | lephare_cachetool_scheme        | string  |  `https`                                       | Use HTTP or HTTPS                |
 | lephare_cachetool_options       | string  |  `""`                                          | Arbitrary option to use          |
+| lephare_cachetool_retries       | integer |  `10`                                          | Number of retries                |
+| lephare_cachetool_delay         | integer |  `15`                                          | Delay between retries            |
