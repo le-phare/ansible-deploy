@@ -1,3 +1,13 @@
+- name: LEPHARE | ACL | Add write permissions to the user group
+  ansible.builtin.file:
+    path: "{{ item }}"
+    recurse: true
+    state: directory
+    mode: a+rwx
+    modification_time: preserve
+    access_time: preserve
+  loop: "{{ lephare_permission_paths }}"
+
 - name: LEPHARE | ACL | Setup users default directory permissions
   acl:
     path: "{{ item[0] }}"
