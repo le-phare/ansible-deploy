@@ -9,7 +9,7 @@
   loop: "{{ lephare_permission_paths }}"
 
 - name: LEPHARE | ACL | Setup users default directory permissions
-  acl:
+  ansible.posix.acl:
     path: "{{ item[0] }}"
     entity: "{{ item[1] }}"
     permissions: rwx
@@ -20,7 +20,7 @@
   loop: "{{ query('nested', lephare_permission_paths, lephare_permission_users) }}"
 
 - name: LEPHARE | ACL | Setup groups default directory permissions
-  acl:
+  ansible.posix.acl:
     path: "{{ item[0] }}"
     entity: "{{ item[1] }}"
     permissions: rwx
@@ -31,7 +31,7 @@
   loop: "{{ query('nested', lephare_permission_paths, lephare_permission_groups) }}"
 
 - name: LEPHARE | ACL | Setup user directory permissions
-  acl:
+  ansible.posix.acl:
     path: "{{ item[0] }}"
     entity: "{{ item[1] }}"
     permissions: rwx
@@ -41,7 +41,7 @@
   loop: "{{ query('nested', lephare_permission_paths, lephare_permission_users) }}"
 
 - name: LEPHARE | ACL | Setup group directory permissions
-  acl:
+  ansible.posix.acl:
     path: "{{ item[0] }}"
     entity: "{{ item[1] }}"
     permissions: rwx
