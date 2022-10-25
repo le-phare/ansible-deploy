@@ -1,5 +1,15 @@
-- name: LEPHARE - Setup default directory permissions
-  acl:
+- name: LEPHARE | ACL | Add write permissions to the user group
+  ansible.builtin.file:
+    path: "{{ item }}"
+    recurse: true
+    state: directory
+    mode: a+rwx
+    modification_time: preserve
+    access_time: preserve
+  loop: "{{ lephare_permission_paths }}"
+
+- name: LEPHARE | ACL | Setup users default directory permissions
+  ansible.posix.acl:
     path: "{{ item[0] }}"
     entity: "{{ item[1] }}"
     permissions: rwx
@@ -9,8 +19,19 @@
     default: yes
   loop: "{{ query('nested', lephare_permission_paths, lephare_permission_users) }}"
 
-- name: LEPHARE - Setup directory permissions
-  acl:
+- name: LEPHARE | ACL | Setup groups default directory permissions
+  ansible.posix.acl:
+    path: "{{ item[0] }}"
+    entity: "{{ item[1] }}"
+    permissions: rwx
+    etype: group
+    recursive: true
+    state: present
+    default: yes
+  loop: "{{ query('nested', lephare_permission_paths, lephare_permission_groups) }}"
+
+- name: LEPHARE | ACL | Setup user directory permissions
+  ansible.posix.acl:
     path: "{{ item[0] }}"
     entity: "{{ item[1] }}"
     permissions: rwx
@@ -18,3 +39,13 @@
     recursive: true
     state: present
   loop: "{{ query('nested', lephare_permission_paths, lephare_permission_users) }}"
+
+- name: LEPHARE | ACL | Setup group directory permissions
+  ansible.posix.acl:
+    path: "{{ item[0] }}"
+    entity: "{{ item[1] }}"
+    permissions: rwx
+    etype: group
+    recursive: true
+    state: present
+  loop: "{{ query('nested', lephare_permission_paths, lephare_permission_groups) }}"
