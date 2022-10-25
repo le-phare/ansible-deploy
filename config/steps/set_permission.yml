@@ -48,4 +48,4 @@
     etype: group
     recursive: true
     state: present
-  loop: "{{ query('nested', lephare_permission_paths, lephare_permission_users) }}"
+  loop: "{{ query('nested', lephare_permission_paths, lephare_permission_groups) }}"
