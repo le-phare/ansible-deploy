@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/le-phare/ansible-deploy/compare/v1.6.1...v1.7.0) (2022-11-07)
+
+
+### Features
+
+* **cachetool:** allows to define retries and delay ([#28](https://github.com/le-phare/ansible-deploy/issues/28)) ([5e94bb6](https://github.com/le-phare/ansible-deploy/commit/5e94bb67669283bb8d09646484468d2087db47d6))
+* **permissions:** add support for group acls ([#29](https://github.com/le-phare/ansible-deploy/issues/29)) ([a2ff2e8](https://github.com/le-phare/ansible-deploy/commit/a2ff2e869ec40939cba6d8679e99c6a29ba55011))
+
+### Dependencies
+
+* **db-pull** update to [v1.2.0](https://github.com/le-phare/ansible-db-pull/blob/master/CHANGELOG.md)
+
 ### [1.6.1](https://github.com/le-phare/ansible-deploy/compare/v1.6.0...v1.6.1) (2022-10-06)
 
 
