@@ -1,7 +1,7 @@
 - name: LEPHARE | ACL | Add write permissions to the user group
   ansible.builtin.file:
     path: "{{ item }}"
-    recurse: true
+    recurse: false
     state: directory
     mode: a+rwx
     modification_time: preserve
