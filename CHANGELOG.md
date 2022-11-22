@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.1](https://github.com/le-phare/ansible-deploy/compare/v1.7.0...v1.7.1) (2022-11-22)
+
+
+### Bug Fixes
+
+* **permissions:** remove recursivity when changing permissions ([#30](https://github.com/le-phare/ansible-deploy/issues/30)) ([1d8d6b2](https://github.com/le-phare/ansible-deploy/commit/1d8d6b2951bab9eedd1d3092aa118d054cd7d145))
+
 ## [1.7.0](https://github.com/le-phare/ansible-deploy/compare/v1.6.1...v1.7.0) (2022-11-07)
 
 
