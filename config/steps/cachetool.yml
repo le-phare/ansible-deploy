@@ -54,6 +54,15 @@
     dest: "{{ lephare_cachetool_path | dirname }}/.cachetool.yaml"
     mode: 0600
 
+- name: LEPHARE - Run cachetool stat:clear
+  shell: chdir={{ ansistrano_release_path.stdout }}
+    {{ symfony_php_path }} {{ lephare_cachetool_path }} stat:clear {{ lephare_cachetool_options }}
+  when: lephare_cachetool_stat_clear
+  retries: "{{ lephare_cachetool_retries | int }}"
+  delay: "{{ lephare_cachetool_delay | int }}"
+  register: cachetool_stat_clear
+  until: cachetool_stat_clear.rc == 0
+
 - name: LEPHARE - Run cachetool opcache:reset
   shell: chdir={{ ansistrano_release_path.stdout }}
     {{ symfony_php_path }} {{ lephare_cachetool_path }} opcache:reset {{ lephare_cachetool_options }}
