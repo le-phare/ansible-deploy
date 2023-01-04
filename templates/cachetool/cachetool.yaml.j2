@@ -1,0 +1,11 @@
+adapter: web
+{% if cachetool_version.stdout is version('7.1', '>=') %}
+webClient: SymfonyHttpClient
+{% else %}
+webClient: FileGetContents
+{% endif %}
+webUrl: "{{ lephare_cachetool_scheme }}://{{ inventory_hostname }}"
+webPath: "{{ lephare_document_root_path }}"
+{% if lephare_http_basic_secure %}
+webBasicAuth: "{{ lephare_http_basic_user }}:{{ lephare_http_basic_password }}"
+{% endif %}

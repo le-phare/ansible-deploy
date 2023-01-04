@@ -48,9 +48,24 @@
     {{ symfony_php_path }} {{ lephare_cachetool_path }} --version | awk '/^CacheTool / { print $2 }'
   register: cachetool_version
 
+- name: LEPHARE - Generate cachetool configuration
+  ansible.builtin.template:
+    src: cachetool/cachetool.yaml.j2
+    dest: "{{ lephare_cachetool_path | dirname }}/.cachetool.yaml"
+    mode: 0600
+
+- name: LEPHARE - Run cachetool stat:clear
+  shell: chdir={{ ansistrano_release_path.stdout }}
+    {{ symfony_php_path }} {{ lephare_cachetool_path }} stat:clear {{ lephare_cachetool_options }}
+  when: lephare_cachetool_stat_clear
+  retries: "{{ lephare_cachetool_retries | int }}"
+  delay: "{{ lephare_cachetool_delay | int }}"
+  register: cachetool_stat_clear
+  until: cachetool_stat_clear.rc == 0
+
 - name: LEPHARE - Run cachetool opcache:reset
   shell: chdir={{ ansistrano_release_path.stdout }}
-    {{ symfony_php_path }} {{ lephare_cachetool_path }} opcache:reset --web{{ '=SymfonyHttpClient' if cachetool_version.stdout is version('7.1', '>=') }} --web-path={{ lephare_document_root_path }} --web-url={{ lephare_cachetool_scheme }}://{{ inventory_hostname }} {{ lephare_cachetool_options }}
+    {{ symfony_php_path }} {{ lephare_cachetool_path }} opcache:reset {{ lephare_cachetool_options }}
   when: lephare_cachetool_opcache_reset
   retries: "{{ lephare_cachetool_retries | int }}"
   delay: "{{ lephare_cachetool_delay | int }}"
@@ -59,7 +74,7 @@
 
 - name: LEPHARE - Run cachetool apcu:cache:clear
   shell: chdir={{ ansistrano_release_path.stdout }}
-    {{ symfony_php_path }} {{ lephare_cachetool_path }} apcu:cache:clear --web{{ '=SymfonyHttpClient' if cachetool_version.stdout is version('7.1', '>=') }} --web-path={{ lephare_document_root_path }} --web-url={{ lephare_cachetool_scheme }}://{{ inventory_hostname }} {{ lephare_cachetool_options }}
+    {{ symfony_php_path }} {{ lephare_cachetool_path }} apcu:cache:clear {{ lephare_cachetool_options }}
   when: lephare_cachetool_apcu_clear
   retries: "{{ lephare_cachetool_retries | int }}"
   delay: "{{ lephare_cachetool_delay | int }}"
