@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/le-phare/ansible-deploy/compare/v1.7.1...v1.8.0) (2023-01-05)
+
+
+### Features
+
+* **cachetool:** generate cachetool configuration file ([2014472](https://github.com/le-phare/ansible-deploy/commit/201447231d90698565e68f2a6906c647b79b945f))
+
+
+### Bug Fixes
+
+* **cachetool:** add missing task to clear file stats ([#31](https://github.com/le-phare/ansible-deploy/issues/31)) ([4dbc67a](https://github.com/le-phare/ansible-deploy/commit/4dbc67ace6c71eb5aed2f40dd39779106d34b8b4))
+
 ### [1.7.1](https://github.com/le-phare/ansible-deploy/compare/v1.7.0...v1.7.1) (2022-11-22)
 
 
