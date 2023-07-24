@@ -1,4 +1,8 @@
-adapter: web
+adapter: {{ lephare_cachetool_adapter }}
+{% if 'fastcgi' == lephare_cachetool_adapter %}
+fastcgi: {{ lephare_cachetool_fastcgi }}
+{% endif %}
+{% if 'web' == lephare_cachetool_adapter %}
 {% if cachetool_version.stdout is version('7.1', '>=') %}
 webClient: SymfonyHttpClient
 {% else %}
@@ -8,4 +12,5 @@ webUrl: "{{ lephare_cachetool_scheme }}://{{ inventory_hostname }}"
 webPath: "{{ lephare_document_root_path }}"
 {% if lephare_http_basic_secure %}
 webBasicAuth: "{{ lephare_http_basic_user }}:{{ lephare_http_basic_password }}"
+{% endif %}
 {% endif %}

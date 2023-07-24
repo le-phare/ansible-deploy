@@ -31,6 +31,8 @@ The defaults vars declared in this module:
     lephare_assets_build_path: "../web/compiled/"
     lephare_assets_web_path: "compiled/"
 
+    lephare_cachetool_adapter: web
+    lephare_cachetool_fastcgi: '127.0.0.1:9000'
     lephare_cachetool_enable: true
     lephare_cachetool_path: "{{ ansistrano_deploy_to }}/cachetool.phar"
     lephare_cachetool_self_update: true

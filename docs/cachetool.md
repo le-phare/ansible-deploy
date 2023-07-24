@@ -16,15 +16,17 @@ Generates a `.cachetool.yaml` to allow simpler command line usage.
 
 ## Variables
 
-| Variable                        | Type    | Default                                        | Description                      |
-| ------------------------------- | ------- | ---------------------------------------------- | -------------------------------- |
-| lephare_cachetool_enable        | boolean |  `true`                                        | Enable cachetool                 |
-| lephare_cachetool_path          | string  |  `"{{ ansistrano_deploy_to }}/cachetool.phar"` | Path of the cachetool executable |
-| lephare_cachetool_self_update   | boolean |  `true`                                        | Allows cachetool to self-update  |
-| lephare_cachetool_stat_clear    | boolean |  `true`                                        | Clear filesystem stats           |
-| lephare_cachetool_opcache_reset | boolean |  `true`                                        | Clear opcache                    |
-| lephare_cachetool_apcu_clear    | boolean |  `true`                                        | Clear APCu cache                 |
-| lephare_cachetool_scheme        | string  |  `https`                                       | Use HTTP or HTTPS                |
-| lephare_cachetool_options       | string  |  `""`                                          | Arbitrary option to use          |
-| lephare_cachetool_retries       | integer |  `10`                                          | Number of retries                |
-| lephare_cachetool_delay         | integer |  `15`                                          | Delay between retries            |
+| Variable                        | Type    | Default                                       | Description                      |
+|---------------------------------|---------|-----------------------------------------------|----------------------------------|
+| lephare_cachetool_adapter       | string  | `web`                                         | web or fastcgi or cli            |
+| lephare_cachetool_fastcgi       | string  | `127.0.0.1:9000`                              | only if adatper is fastcgi       |
+| lephare_cachetool_enable        | boolean | `true`                                        | Enable cachetool                 |
+| lephare_cachetool_path          | string  | `"{{ ansistrano_deploy_to }}/cachetool.phar"` | Path of the cachetool executable |
+| lephare_cachetool_self_update   | boolean | `true`                                        | Allows cachetool to self-update  |
+| lephare_cachetool_stat_clear    | boolean | `true`                                        | Clear filesystem stats           |
+| lephare_cachetool_opcache_reset | boolean | `true`                                        | Clear opcache                    |
+| lephare_cachetool_apcu_clear    | boolean | `true`                                        | Clear APCu cache                 |
+| lephare_cachetool_scheme        | string  | `https`                                       | Use HTTP or HTTPS                |
+| lephare_cachetool_options       | string  | `""`                                          | Arbitrary option to use          |
+| lephare_cachetool_retries       | integer | `10`                                          | Number of retries                |
+| lephare_cachetool_delay         | integer | `15`                                          | Delay between retries            |
