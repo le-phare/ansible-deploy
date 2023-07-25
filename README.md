@@ -150,7 +150,7 @@ We use a docker image `lephare/ansible` to deploy our projects.
 
 Clone or fork the repository and make your change in a branch, for example a branch names `fastcgi".
 
-You can test your modification by build your own docker image. Then you can build the image with.
+You can test your modification by building your own docker image:
 
     $ cd docker
     $ docker build -f Dockerfile.dev .. -t lephare/ansible:fastcgi --no-cache
