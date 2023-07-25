@@ -31,6 +31,8 @@ The defaults vars declared in this module:
     lephare_assets_build_path: "../web/compiled/"
     lephare_assets_web_path: "compiled/"
 
+    lephare_cachetool_adapter: web
+    lephare_cachetool_fastcgi: '127.0.0.1:9000'
     lephare_cachetool_enable: true
     lephare_cachetool_path: "{{ ansistrano_deploy_to }}/cachetool.phar"
     lephare_cachetool_self_update: true
@@ -146,11 +148,12 @@ We use a docker image `lephare/ansible` to deploy our projects.
 
 ## Contribute
 
-Clone or fork the repository and make your change in a branch.
+Clone or fork the repository and make your change in a branch (below is an example for a "fastcgi" branch).
 
-You can test your modification by build your own docker image. You need to edit the `docker/roles.yml` and adjust the repository url and branch name. Then you can build the image with.
+You can test your modification by building your own docker image:
 
-    $ docker build -t lephare/ansible ./docker --no-cache
+    $ cd docker
+    $ docker build -f Dockerfile.dev .. -t lephare/ansible:fastcgi --no-cache
 
 ## License
 MIT
