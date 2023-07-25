@@ -148,11 +148,12 @@ We use a docker image `lephare/ansible` to deploy our projects.
 
 ## Contribute
 
-Clone or fork the repository and make your change in a branch.
+Clone or fork the repository and make your change in a branch, for example a branch names `fastcgi".
 
-You can test your modification by build your own docker image. You need to edit the `docker/roles.yml` and adjust the repository url and branch name. Then you can build the image with.
+You can test your modification by build your own docker image. Then you can build the image with.
 
-    $ docker build -t lephare/ansible ./docker --no-cache
+    $ cd docker
+    $ docker build -f Dockerfile.dev .. -t lephare/ansible:fastcgi --no-cache
 
 ## License
 MIT
