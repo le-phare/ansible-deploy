@@ -148,7 +148,7 @@ We use a docker image `lephare/ansible` to deploy our projects.
 
 ## Contribute
 
-Clone or fork the repository and make your change in a branch, for example a branch names `fastcgi".
+Clone or fork the repository and make your change in a branch (below is an example for a "fastcgi" branch).
 
 You can test your modification by building your own docker image:
 
