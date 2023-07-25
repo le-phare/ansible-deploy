@@ -30,3 +30,25 @@ Generates a `.cachetool.yaml` to allow simpler command line usage.
 | lephare_cachetool_options       | string  | `""`                                          | Arbitrary option to use          |
 | lephare_cachetool_retries       | integer | `10`                                          | Number of retries                |
 | lephare_cachetool_delay         | integer | `15`                                          | Delay between retries            |
+
+
+## Tips
+
+### Speed up cache invalidation
+
+The default cache adapter is `web`. With this configuration, cachetool create a temporary PHP script file and calls it
+through the web interface.
+
+The process goes through the full stack: name resolution, TLS, web server, FPM etc . depending on `lephare_cachetool_scheme`.
+
+This call may fail several times until it reaches the `lephare_cachetool_retries` (default 10) limit,
+with each retry occurring after `lephare_cachetool_delay` seconds (default 15), which may lead to a 404 error.
+
+By choosing `fastcgi` adapter, cachetool interacts directly with FPM server through the FastCGI protocol.
+Unless the PHP setting `opcache.memory_consumption` is insufficient for your codebase, you won't encounter
+failure, retries or delays.
+
+**NB**: this adapter is also useful when you have more than 1 server for an app.
+For example, if you have two servers `foo` and `bar` behind `https://www.acme.com` and you use `web` adapter,
+cachetool will only clear caches on one server behind your load balancer depending on its strategy.
+However, using the fastcgi adapter ensures that caches are cleared on both `foo` and `bar` servers.
