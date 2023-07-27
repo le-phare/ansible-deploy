@@ -1,14 +1,13 @@
-- name: LEPHARE | COMPOSER | Ensure configuration directory exists
-  file:
-    path: "{{ composer_facts.home }}"
-    state: directory
-    recurse: yes
-    mode: 0755
-  register: composer_home_directory
+- name: Add lephare_composer_home directory to current user $PATH.
+  ansible.builtin.lineinfile:
+    path: ~/.profile
+    line: 'export COMPOSER_HOME={{ lephare_composer_home }}'
+    create: true
+    backup: true
 
 - name: LEPHARE | COMPOSER | Setup private registry
   template:
     src: composer/auth.json.j2
-    dest: "{{ composer_home_directory.path }}/auth.json"
+    dest: "{{ lephare_composer_home }}/auth.json"
     mode: 0600
   when: lephare_packagist_com_token is defined
