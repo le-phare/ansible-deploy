@@ -51,7 +51,7 @@ lephare_run_doctrine_migrations: true
 lephare_console_path: bin/console
 lephare_composer_options: "--no-dev --optimize-autoloader --apcu-autoloader --no-interaction"
 lephare_composer_dump_environment: true
-lephare_composer_home: '~/.composer'
+lephare_composer_home: '~/.config/composer'
 
 lephare_cloudfront_invalidate: false
 lephare_cloudfront_path: ["/*"]
