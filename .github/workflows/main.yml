@@ -22,12 +22,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Extract branch/tag name
-        id: extract_branch
-        shell: bash
-        run: |
-          echo "branch=$(echo ${GITHUB_REF/refs\/*\/})" >> $GITHUB_OUTPUT
-
       - name: Release
         id: release
         uses: google-github-actions/release-please-action@v3
@@ -59,6 +53,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Extract branch/tag name
+        id: extract_branch
+        shell: bash
+        run: |
+          echo "branch=$(echo ${GITHUB_REF/refs\/*\/})" >> $GITHUB_OUTPUT
 
       - name: Build and push
         uses: docker/build-push-action@v4
