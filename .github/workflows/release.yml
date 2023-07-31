@@ -1,0 +1,22 @@
+name: Build Ansible docker images
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  Ansible:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Release
+        id: release
+        uses: google-github-actions/release-please-action@v4
+        with:
+          release-type: simple
+          package-name: .
