@@ -22,13 +22,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Release
-        id: release
-        uses: google-github-actions/release-please-action@v3
-        with:
-          release-type: simple
-          package-name: .
-
       - name: Docker meta
         id: docker_meta
         uses: docker/metadata-action@v4
