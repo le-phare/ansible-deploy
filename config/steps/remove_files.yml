@@ -1,4 +1,4 @@
-- name: LEPHARE | delete files
+- name: LEPHARE | remove files
   file:
     state: absent
     path: "{{ item }}"
