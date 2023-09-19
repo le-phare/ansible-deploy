@@ -78,6 +78,9 @@ lephare_couscous_self_update: true
 
 lephare_dump_database: false
 
+lephare_remove_files: false
+lephare_remove_files_paths: []
+
 # Symfony messenger defaults
 symfony_messenger_enable: false
 symfony_messenger_strategy: crontab
