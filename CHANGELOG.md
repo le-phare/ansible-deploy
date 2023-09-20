@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/le-phare/ansible-deploy/compare/v1.9.0...v1.10.0) (2023-09-20)
+
+### Features
+
+* **files:** allow deleting files after deployment ([#44](https://github.com/le-phare/ansible-deploy/issues/44))([6454ab](https://github.com/le-phare/ansible-deploy/commit/6454ab8b98d9634deda63ccfd81e20576e3bf000))
+
 ## [1.9.0](https://github.com/le-phare/ansible-deploy/compare/v1.8.1...v1.9.0) (2023-08-25)
 
 ### Features
