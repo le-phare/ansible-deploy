@@ -1,0 +1,5 @@
+- name: LEPHARE | remove files
+  file:
+    state: absent
+    path: "{{ item }}"
+  loop: "{{ (lephare_remove_files_paths | flatten ) }}"

@@ -12,3 +12,6 @@
 
 - include_tasks: "../../lephare.ansible-deploy/config/steps/couscous.yml"
   when: lephare_couscous_enable
+
+- include_tasks: "../../lephare.ansible-deploy/config/steps/remove_files.yml"
+  when: lephare_remove_files
