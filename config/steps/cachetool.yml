@@ -28,7 +28,7 @@
     and cachetool_facts.required_version == 'latest'
 
 - name: LEPHARE - Install {{ cachetool_facts.required_version }} cachetool
-  get_url: url=https://github.com/gordalina/cachetool/releases/download/{{ cachetool_facts.required_version }}/cachetool.phar dest={{ lephare_cachetool_path }} mode=0755 validate_certs=no force=no
+  get_url: url=https://gordalina.github.io/cachetool/downloads/cachetool-{{ cachetool_facts.required_version }}.phar dest={{ lephare_cachetool_path }} mode=0755 validate_certs=no force=no
   when: |-
     cachetool_facts.required_version != 'latest' and (
       not cachetool_file.stat.exists
