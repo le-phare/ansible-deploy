@@ -18,6 +18,7 @@ Common deploy tasks for projects made at Le Phare.
   * [Messenger](docs/symfony/messenger.md)
   * [Secrets](docs/symfony/secrets.md)
 * [Permissions](docs/permissions.md)
+* [Remove files](docs/remove_files.md)
 
 ## Role Variables
 
@@ -79,7 +80,10 @@ The defaults vars declared in this module:
     lephare_permission_paths: [ "{{ ansistrano_release_path.stdout }}/var/cache", "{{ ansistrano_shared_path }}/var/logs" ]
     lephare_permission_users: [ "www-data", "{{ ansible_user }}" ]
 
-Additionnaly, this module change some defaults vars from `cbrunnkvist.ansistrano-symfony-deploy` and `ansistrano.deploy`
+    lephare_remove_files: false
+    lephare_remove_files_paths: []
+
+Additionally, this module change some defaults vars from `cbrunnkvist.ansistrano-symfony-deploy` and `ansistrano.deploy`
 
     ansistrano_after_symlink_tasks_file: "../../lephare.ansible-deploy/config/after_symlink.yml"
     ansistrano_before_symlink_tasks_file: "../../lephare.ansible-deploy/config/before_symlink.yml"
@@ -115,7 +119,7 @@ Additionnaly, this module change some defaults vars from `cbrunnkvist.ansistrano
 
 ### Dump database before composer
 
-**NB: Ony works with postgres installed on the app node**
+**NB: Only works with postgres installed on the app node**
 
 Backup la base de données de la version courante lors du déploiement. Un fichier portant le nom de
 la base de données est placer dans la release courante.
