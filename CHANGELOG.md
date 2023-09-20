@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.1](https://github.com/le-phare/ansible-deploy/compare/v1.10.0...v1.10.1) (2023-09-20)
+
+### Bug Fixes
+
+* **cachetool:** download specific cachetool versions from gordalina instead of inexistent github.com releases ([#18](https://github.com/le-phare/ansible-deploy/issues/18))([e59455](https://github.com/le-phare/ansible-deploy/commit/e59455d19248a37e38642c6ff2e767a4605e85e6))
+
 ## [1.10.0](https://github.com/le-phare/ansible-deploy/compare/v1.9.0...v1.10.0) (2023-09-20)
 
 ### Features
