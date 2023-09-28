@@ -6,6 +6,7 @@ lephare_default_git_branch: master
 lephare_document_root_path: "{{ ansistrano_release_path.stdout }}/web"
 
 lephare_assets_publish: true
+lephare_assets_publish_rsync_opts: []
 lephare_assets_build_path: "../web/compiled/"
 lephare_assets_web_path: "compiled/"
 
