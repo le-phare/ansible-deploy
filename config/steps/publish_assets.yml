@@ -4,3 +4,4 @@
     dest: "{{ lephare_document_root_path }}/{{ lephare_assets_web_path }}"
     recursive: yes
     delete: yes
+    rsync_opts: "{{ lephare_assets_publish_rsync_opts }}"

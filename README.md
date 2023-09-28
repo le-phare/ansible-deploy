@@ -29,6 +29,7 @@ The defaults vars declared in this module:
     lephare_document_root_path: "{{ ansistrano_deploy_to }}/current/web"
 
     lephare_assets_publish: true
+    lephare_assets_publish_rsync_opts: []
     lephare_assets_build_path: "../web/compiled/"
     lephare_assets_web_path: "compiled/"
 
