@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/le-phare/ansible-deploy/compare/v1.10.1...v1.11.0) (2023-09-28)
+
+### Features
+
+* **publish assets:** allow to add rsync options ([#46](https://github.com/le-phare/ansible-deploy/pull/46))([a7fd9d](https://github.com/le-phare/ansible-deploy/commit/a7fd9df3e5f678a16a864b78378aa42aba594d79))
+
 ## [1.10.1](https://github.com/le-phare/ansible-deploy/compare/v1.10.0...v1.10.1) (2023-09-20)
 
 ### Bug Fixes
