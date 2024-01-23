@@ -1,8 +1,6 @@
-name: Build Ansible docker images
+name: Build & publish Ansible Docker images
 
 on:
-  schedule:
-    - cron: "0 12 * * SUN" # every sunday
   push:
     branches:
       - master
@@ -12,12 +10,8 @@ on:
     branches:
       - "master"
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
-  Ansible:
+  build_publish_docker_image:
     runs-on: ubuntu-latest
 
     steps:

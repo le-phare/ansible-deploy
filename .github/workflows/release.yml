@@ -1,4 +1,4 @@
-name: Build Ansible docker images
+name: Create a release PR using Release Please
 
 on:
   push:
@@ -10,12 +10,12 @@ permissions:
   pull-requests: write
 
 jobs:
-  Ansible:
+  release_please:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Release
-        id: release
+      - name: Release Please
+        id: release_please
         uses: google-github-actions/release-please-action@v4
         with:
           release-type: simple
