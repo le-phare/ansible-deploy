@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.1](https://github.com/le-phare/ansible-deploy/compare/v1.12.0...v1.12.1) (2024-07-02)
+
+### Features
+
+* **Dockerfile:** add sshpass package ([#52](https://github.com/le-phare/ansible-deploy/pull/52))([todo](https://github.com/le-phare/ansible-deploy/pull/52/commits/todo))
+
 ## [1.12.0](https://github.com/le-phare/ansible-deploy/compare/v1.11.0...v1.12.0) (2024-07-02)
 
 ### Features

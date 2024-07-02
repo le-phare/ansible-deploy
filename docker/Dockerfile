@@ -6,7 +6,7 @@ ENV ANSIBLE_RETRY_FILES_ENABLED=false
 ENV ANSIBLE_STDOUT_CALLBACK=debug
 
 RUN apk add --no-cache --update bash git mysql-client openssh-client postgresql rsync
-RUN apk add --no-cache --virtual build-dependencies gcc libffi-dev musl-dev
+RUN apk add --no-cache --virtual build-dependencies gcc libffi-dev musl-dev sshpass
 
 RUN pip install --no-cache-dir ansible
 
