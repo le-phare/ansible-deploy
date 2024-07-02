@@ -1,5 +1,5 @@
 - include_tasks: "../../lephare.ansible-deploy/config/steps/composer/private_registry.yml"
-  when: lephare_packagist_com_token is defined
+  when: lephare_packagist_com_token is defined or lephare_gitlab_token is defined
 
 - name: Set release environment variable
   shell: chdir={{ansistrano_release_path.stdout}}

@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/le-phare/ansible-deploy/compare/v1.11.0...v1.12.0) (2024-07-02)
+
+### Features
+
+* **private registry:** allow set gitlab-token Composer auth ([#51](https://github.com/le-phare/ansible-deploy/pull/51))([6abce76](https://github.com/le-phare/ansible-deploy/pull/51/commits/6abce764e7654c7b807c63b68b66f3c8ee85c280))
+
 ## [1.11.0](https://github.com/le-phare/ansible-deploy/compare/v1.10.1...v1.11.0) (2023-09-28)
 
 ### Features
