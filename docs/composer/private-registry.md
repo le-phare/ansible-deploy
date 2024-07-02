@@ -2,7 +2,7 @@
 
 ## Conditions
 
-`lephare_packagist_com_token` must be set.
+`lephare_packagist_com_token` or `lephare_gitlab_token` must be set.
 
 ## When
 
