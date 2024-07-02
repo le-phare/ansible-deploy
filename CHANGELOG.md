@@ -4,9 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.12.1](https://github.com/le-phare/ansible-deploy/compare/v1.12.0...v1.12.1) (2024-07-02)
 
-### Features
+### Bug Fixes
 
-* **Dockerfile:** add sshpass package ([#52](https://github.com/le-phare/ansible-deploy/pull/52))([todo](https://github.com/le-phare/ansible-deploy/pull/52/commits/todo))
+* **Dockerfile:** add sshpass package ([#52](https://github.com/le-phare/ansible-deploy/pull/52))([72dd8ad](https://github.com/le-phare/ansible-deploy/pull/52/commits/72dd8ad064a212f3bca23396b738d1e9e0ce4665))
 
 ## [1.12.0](https://github.com/le-phare/ansible-deploy/compare/v1.11.0...v1.12.0) (2024-07-02)
 
