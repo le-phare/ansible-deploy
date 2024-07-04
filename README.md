@@ -7,6 +7,12 @@ Common deploy tasks for projects made at Le Phare.
   - [ansistrano.deploy](https://github.com/ansistrano/deploy)
   - [cbrunnkvist/ansistrano-symfony-deploy](https://github.com/cbrunnkvist/ansistrano-symfony-deploy)
 
+## Support matrix
+
+- lephare/ansible:1.12.3 - Ansible 2.15.4 - Python 2.7 or Python 3.5 - 3.11 (Control node)
+
+See [Ansible core support matrix](https://docs.ansible.com/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-core-support-matrix)
+
 ## Documentation
 
 * [Workflow overview](docs/workflow.md)
