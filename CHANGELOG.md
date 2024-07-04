@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **private registry:** add default value for lephare_gitlab_token and lephare_packagist_com_token  ([#TODO](https://github.com/le-phare/ansible-deploy/pull/TODO))([TODO](https://github.com/le-phare/ansible-deploy/pull/52/commits/72dd8ad064a212f3bca23396b738d1e9e0ce4665))
+* **private registry:** add default value for lephare_gitlab_token and lephare_packagist_com_token  ([#54](https://github.com/le-phare/ansible-deploy/pull/54))([b71ddc1](https://github.com/le-phare/ansible-deploy/pull/54/commits/b71ddc15d031f0fe2fafabd0381eebf5c6a42616))
 
 
 ## [1.12.1](https://github.com/le-phare/ansible-deploy/compare/v1.12.0...v1.12.1) (2024-07-03)
