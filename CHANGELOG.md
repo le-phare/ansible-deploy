@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **Ansible version:** fix Ansible version to 2.15.4  ([#todo](https://github.com/le-phare/ansible-deploy/pull/todo))([todo](https://github.com/le-phare/ansible-deploy/pull/todo/commits/todo))
+* **Ansible version:** fix Ansible version to 2.15.4  ([#todo](https://github.com/le-phare/ansible-deploy/pull/55))([4da1bf8](https://github.com/le-phare/ansible-deploy/pull/55/commits/4da1bf8a7a638d27a512fb204635569d83c1d84f))
 
 ## [1.12.2](https://github.com/le-phare/ansible-deploy/compare/v1.12.1...v1.12.2) (2024-07-04)
 
