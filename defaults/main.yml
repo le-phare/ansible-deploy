@@ -23,6 +23,10 @@ lephare_cachetool_options: ""
 lephare_cachetool_retries: 10
 lephare_cachetool_delay: 15
 
+lephare_gitlab_token: ""
+
+lephare_packagist_com_token: ""
+
 lephare_rollbar_notify: false
 
 lephare_sentry_notify: false
