@@ -45,6 +45,10 @@ The defaults vars declared in this module:
 
     lephare_composer_home: '~/.config/composer'
 
+    lephare_gitlab_token: ""
+
+    lephare_packagist_com_token: ""
+
     lephare_rollbar_notify: true
     lephare_rollbar_environment: production
 

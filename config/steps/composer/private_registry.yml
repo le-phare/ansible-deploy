@@ -10,4 +10,4 @@
     src: composer/auth.json.j2
     dest: "{{ lephare_composer_home }}/auth.json"
     mode: 0600
-  when: lephare_packagist_com_token is defined or lephare_gitlab_token is defined
+  when: lephare_packagist_com_token != "" or lephare_gitlab_token != ""
