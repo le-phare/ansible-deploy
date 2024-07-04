@@ -8,7 +8,7 @@ ENV ANSIBLE_STDOUT_CALLBACK=debug
 RUN apk add --no-cache --update bash git mysql-client openssh-client postgresql rsync sshpass
 RUN apk add --no-cache --virtual build-dependencies gcc libffi-dev musl-dev
 
-RUN pip install --no-cache-dir ansible ansible-core==2.15.4
+RUN pip install --no-cache-dir ansible ansible-core==2.17
 
 RUN apk del build-dependencies
 
