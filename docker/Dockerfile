@@ -19,7 +19,7 @@ RUN adduser -u 1000 -D ansible
 WORKDIR /app
 
 COPY ./requirements.yml /tmp/requirements.yml
-RUN sed -i -r "s/(name: lephare.ansible-deploy)/\1\n    version: $ANSIBLE_DEPLOY_BRANCH/g" /tmp/requirements.yml
+RUN sed -i -r "s@(name: lephare.ansible-deploy)@\1\n    version: $ANSIBLE_DEPLOY_BRANCH@g" /tmp/requirements.yml
 
 USER ansible
 RUN ansible-galaxy install -r /tmp/requirements.yml
