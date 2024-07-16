@@ -35,9 +35,13 @@ stateDiagram-v2
     }
 
     state lephare_symfony_before_composer_tasks_file {
-          SetupPrivateRegistry --> SetReleaseEnvironmentVariable
+          PrivateRegistry --> SetReleaseEnvironmentVariable
           SetReleaseEnvironmentVariable --> DumpAnExistingDatabaseToFile
           DumpAnExistingDatabaseToFile --> SetupSecretDecryptKey
+    }
+
+    state PrivateRegistry {
+       ComposerHome --> SetupPrivateRegistry
     }
 
     state ansistrano_symfony_after_composer_tasks_file {
