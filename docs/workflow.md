@@ -40,6 +40,14 @@ stateDiagram-v2
           DumpAnExistingDatabaseToFile --> SetupSecretDecryptKey
     }
 
+    state ansistrano_symfony_after_composer_tasks_file {
+       lephare_symfony_after_composer_tasks_file
+    }
+
+    state lephare_symfony_after_composer_tasks_file {
+        DumpEnvironment
+    }
+
     state Assets {
         ansistrano_symfony_before_assets_tasks_file --> ansistrano_symfony_after_assets_tasks_file
     }
