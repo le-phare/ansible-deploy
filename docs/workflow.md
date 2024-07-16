@@ -46,6 +46,15 @@ stateDiagram-v2
         ansistrano_symfony_before_doctrine_tasks_file --> ansistrano_symfony_after_doctrine_tasks_file
     }
 
+    state ansistrano_symfony_before_doctrine_tasks_file {
+        lephare_symfony_before_doctrine_tasks_file --> ansistrano_symfony_after_doctrine_tasks_file
+    }
+
+    state lephare_symfony_before_doctrine_tasks_file {
+        StopWorkers
+    }
+
+
     state MongoDB {
         ansistrano_symfony_before_mongodb_tasks_file --> ansistrano_symfony_after_mongodb_tasks_file
     }
@@ -67,6 +76,7 @@ stateDiagram-v2
         PreventIndexation --> Secure
         Secure --> Adminer
         Adminer --> Couscous
+        Couscous --> Remove files
     }
 
     state ansistrano_after_symlink_tasks_file {
