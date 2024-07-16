@@ -91,7 +91,8 @@ stateDiagram-v2
 
     state ansistrano_after_symlink_tasks_file {
         CacheTool --> Crontab
-        Crontab --> CloudfrontInvalidate
+        Crontab --> MessengerEnable
+        MessengerEnable --> CloudfrontInvalidate
         CloudfrontInvalidate --> RollbarNotify
         RollbarNotify --> SentryNotify
         SentryNotify --> Tideways
