@@ -30,6 +30,16 @@ stateDiagram-v2
        ansistrano_symfony_before_composer_tasks_file --> ansistrano_symfony_after_composer_tasks_file
     }
 
+    state ansistrano_symfony_before_composer_tasks_file {
+       lephare_symfony_before_composer_tasks_file --> ansistrano_symfony_after_composer_tasks_file
+    }
+
+    state lephare_symfony_before_composer_tasks_file {
+          SetupPrivateRegistry --> SetReleaseEnvironmentVariable
+          SetReleaseEnvironmentVariable --> DumpAnExistingDatabaseToFile
+          DumpAnExistingDatabaseToFile --> SetupSecretDecryptKey
+    }
+
     state Assets {
         ansistrano_symfony_before_assets_tasks_file --> ansistrano_symfony_after_assets_tasks_file
     }
