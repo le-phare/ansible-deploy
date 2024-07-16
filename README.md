@@ -9,7 +9,8 @@ Common deploy tasks for projects made at Le Phare.
 
 ## Support matrix
 
-- lephare/ansible:1.12.3 - Ansible 2.15.4 - Python 2.7 or Python 3.5 - 3.11 (Control node)
+- lephare/ansible:2.0.0 - Ansible 2.17 - Python 3.7 - 3.12 (Target node)
+- lephare/ansible:1.12.3 - Ansible 2.15.4 - Python 2.7 or Python 3.5 - 3.11 (Target node)
 
 See [Ansible core support matrix](https://docs.ansible.com/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-core-support-matrix)
 
