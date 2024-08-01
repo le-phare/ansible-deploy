@@ -98,7 +98,8 @@ stateDiagram-v2
         PreventIndexation --> Secure
         Secure --> Adminer
         Adminer --> Couscous
-        Couscous --> Remove files
+        Couscous --> RemoveFiles
+        state "Remove files" as RemoveFiles
     }
 
     state ansistrano_after_symlink_tasks_file {
