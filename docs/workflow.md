@@ -30,6 +30,28 @@ stateDiagram-v2
        ansistrano_symfony_before_composer_tasks_file --> ansistrano_symfony_after_composer_tasks_file
     }
 
+    state ansistrano_symfony_before_composer_tasks_file {
+       lephare_symfony_before_composer_tasks_file --> ansistrano_symfony_after_composer_tasks_file
+    }
+
+    state lephare_symfony_before_composer_tasks_file {
+          PrivateRegistry --> SetReleaseEnvironmentVariable
+          SetReleaseEnvironmentVariable --> DumpAnExistingDatabaseToFile
+          DumpAnExistingDatabaseToFile --> SetupSecretDecryptKey
+    }
+
+    state PrivateRegistry {
+       ComposerHome --> SetupPrivateRegistry
+    }
+
+    state ansistrano_symfony_after_composer_tasks_file {
+       lephare_symfony_after_composer_tasks_file
+    }
+
+    state lephare_symfony_after_composer_tasks_file {
+        DumpEnvironment
+    }
+
     state Assets {
         ansistrano_symfony_before_assets_tasks_file --> ansistrano_symfony_after_assets_tasks_file
     }
@@ -45,6 +67,15 @@ stateDiagram-v2
     state Doctrine {
         ansistrano_symfony_before_doctrine_tasks_file --> ansistrano_symfony_after_doctrine_tasks_file
     }
+
+    state ansistrano_symfony_before_doctrine_tasks_file {
+        lephare_symfony_before_doctrine_tasks_file --> ansistrano_symfony_after_doctrine_tasks_file
+    }
+
+    state lephare_symfony_before_doctrine_tasks_file {
+        StopWorkers
+    }
+
 
     state MongoDB {
         ansistrano_symfony_before_mongodb_tasks_file --> ansistrano_symfony_after_mongodb_tasks_file
@@ -67,11 +98,14 @@ stateDiagram-v2
         PreventIndexation --> Secure
         Secure --> Adminer
         Adminer --> Couscous
+        Couscous --> RemoveFiles
+        state "Remove files" as RemoveFiles
     }
 
     state ansistrano_after_symlink_tasks_file {
         CacheTool --> Crontab
-        Crontab --> CloudfrontInvalidate
+        Crontab --> MessengerEnable
+        MessengerEnable --> CloudfrontInvalidate
         CloudfrontInvalidate --> RollbarNotify
         RollbarNotify --> SentryNotify
         SentryNotify --> Tideways
