@@ -1,0 +1,2 @@
+- name: LEPHARE - Uninstall crontab
+  command: "crontab -r"

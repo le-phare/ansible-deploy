@@ -68,6 +68,7 @@ The defaults vars declared in this module:
     lephare_slack_notify_channel: "#general"
 
     lephare_crontab_install: false
+    lephare_crontab_uninstall: false
     lephare_crontab_path: "{{ ansistrano_release_path.stdout }}/app/Resources/crontab"
 
     lephare_prevent_robots_indexation: false
