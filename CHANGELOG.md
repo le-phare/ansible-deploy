@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/le-phare/ansible-deploy/compare/v2.0.0...v2.1.0) (2024-08-01)
+
+### Features
+
+* **crontab:** add `lephare_crontab_uninstall` variable to delete crontab (disabled by default) ([#60](https://github.com/le-phare/ansible-deploy/pull/60))([6418578](https://github.com/le-phare/ansible-deploy/pull/60/commits/641857816667aa23dba395ea84a8ebcd5cb8a30b))
+
 ## [2.0.0](https://github.com/le-phare/ansible-deploy/compare/v1.12.3...v2.0.0) (2024-07-16)
 
 ### Breaking changes
