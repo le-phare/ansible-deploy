@@ -2,6 +2,7 @@
 ansistrano_before_setup_tasks_file: "{{ lephare_before_setup_tasks_file | default('../../lephare.ansible-deploy/config/before_setup.yml') }}"
 ansistrano_after_symlink_tasks_file: "{{ lephare_after_symlink_tasks_file | default('../../lephare.ansible-deploy/config/after_symlink.yml') }}"
 ansistrano_before_symlink_tasks_file: "{{ lephare_before_symlink_tasks_file | default('../../lephare.ansible-deploy/config/before_symlink.yml') }}"
+
 ansistrano_symfony_after_cache_tasks_file: "{{ lephare_symfony_after_cache_tasks_file | default('../../lephare.ansible-deploy/config/after_cache.yml') }}"
 ansistrano_symfony_before_composer_tasks_file: "{{ lephare_symfony_before_composer_tasks_file | default('../../lephare.ansible-deploy/config/before_composer.yml') }}"
 ansistrano_symfony_after_composer_tasks_file: "{{ lephare_symfony_after_composer_tasks_file | default('../../lephare.ansible-deploy/config/after_composer.yml') }}"

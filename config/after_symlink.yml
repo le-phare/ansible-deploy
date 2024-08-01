@@ -4,6 +4,9 @@
 - include_tasks: "../../lephare.ansible-deploy/config/steps/install_crontab.yml"
   when: lephare_crontab_install
 
+- include_tasks: "../../lephare.ansible-deploy/config/steps/uninstall_crontab.yml"
+  when: lephare_crontab_uninstall
+
 - include_tasks: "../../lephare.ansible-deploy/config/steps/symfony/messenger/after_symlink.yml"
   when: symfony_messenger_enable
 
