@@ -1,5 +1,13 @@
-- name: LEPHARE - install latest Adminer
-  get_url:
-    url: https://www.adminer.org/latest.php
-    dest: "{{ lephare_install_adminer_path }}/adminer.php"
+- name: LEPHARE - install latest AdminerEvo
+  unarchive:
+    src: https://download.adminerevo.org/latest/adminer/adminer-fr.zip
+    dest: "{{ lephare_install_adminer_path }}"
+    remote_src: yes
+  ignore_errors: True
+
+- name: LEPHARE - rename AdminerEvo file
+  command: mv "{{ lephare_install_adminer_path }}/adminer-fr.php" "{{ lephare_install_adminer_path }}/{{lephare_install_adminer_filename}}"
+  args:
+    removes: "{{ lephare_install_adminer_path }}/adminer-fr.php"
+    creates: "{{ lephare_install_adminer_path }}/{{lephare_install_adminer_filename}}"
   ignore_errors: True
