@@ -2,7 +2,7 @@
 dependencies:
   - name: cbrunnkvist.ansistrano-symfony-deploy
     src: https://github.com/le-phare/ansistrano-symfony-deploy
-    version: install-composer
+    version: master
 
 galaxy_info:
   author: Erwan Richard
