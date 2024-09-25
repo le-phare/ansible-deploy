@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/le-phare/ansible-deploy/compare/v2.1.0...v2.2.0) (2024-09-13)
+
+
+### Features
+
+* **adminer:** switch to AdminerEvo, filename customization ([#64](https://github.com/le-phare/ansible-deploy/issues/64)) ([9d55ad0](https://github.com/le-phare/ansible-deploy/commit/9d55ad0f3c38ba9f178550dacebaf3394bf94f63))
+
 ## [2.1.0](https://github.com/le-phare/ansible-deploy/compare/v2.0.0...v2.1.0) (2024-08-01)
 
 ### Features
