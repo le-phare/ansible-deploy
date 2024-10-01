@@ -88,6 +88,7 @@ The defaults vars declared in this module:
     lephare_install_adminer_path: "{{ lephare_document_root_path }}"
 
     lephare_permission_set: false
+    lephare_install_adminer_filename: "adminer.php"
     lephare_permission_paths: [ "{{ ansistrano_release_path.stdout }}/var/cache", "{{ ansistrano_shared_path }}/var/logs" ]
     lephare_permission_users: [ "www-data", "{{ ansible_user }}" ]
 
