@@ -85,6 +85,7 @@ The defaults vars declared in this module:
     lephare_cloudfront_path: [ '/*' ]
 
     lephare_install_adminer: false
+    lephare_install_adminer_filename: "adminer.php"
     lephare_install_adminer_path: "{{ lephare_document_root_path }}"
 
     lephare_permission_set: false
