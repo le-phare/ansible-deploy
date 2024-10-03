@@ -3,7 +3,8 @@ name: Release
 on:
   push:
     branches:
-      - master
+      - "v1"
+      - "master" # v2
 
 permissions:
   contents: write
