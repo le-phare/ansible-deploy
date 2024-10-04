@@ -1,6 +1,8 @@
 ---
 dependencies:
-  - { role: cbrunnkvist.ansistrano-symfony-deploy }
+  - name: cbrunnkvist.ansistrano-symfony-deploy
+    src: https://github.com/le-phare/ansistrano-symfony-deploy
+    version: master
 
 galaxy_info:
   author: Erwan Richard
