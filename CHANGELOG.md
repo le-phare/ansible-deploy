@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.1](https://github.com/le-phare/ansible-deploy/compare/v2.2.0...v2.2.1) (2024-10-04)
+
+
+### Bug Fixes
+
+* **release-please:** handle v1 versions ([729665b](https://github.com/le-phare/ansible-deploy/commit/729665bd5a5aa854c5d679cca6953cfffa952703))
+
 ## [2.2.0](https://github.com/le-phare/ansible-deploy/compare/v2.1.0...v2.2.0) (2024-09-13)
 
 
