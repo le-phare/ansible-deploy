@@ -94,6 +94,19 @@ docker run -it --rm \
     ansible/deploy.yml
 ```
 
+## Restore an older PostgreSQL database using db-pull in Docker
+
+**NB: We only support PostgreSQL versions
+currently [supported by Alpine Linux](https://pkgs.alpinelinux.org/packages?name=postgresql%3F%3F-client)**
+
+Set vars:
+
+```yaml
+db_pull_postgresql_createdb_binary_path: "/usr/libexec/postgresql15/createdb"
+db_pull_postgresql_dropdb_binary_path: "/usr/libexec/postgresql15/dropdb"
+db_pull_postgresql_pg_restore_binary_path: "/usr/libexec/postgresql15/pg_restore"
+```
+
 ## Contribute
 
 Clone or fork the repository and make your change in a branch (below is an example for a "fastcgi" branch).
