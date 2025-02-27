@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - "v1"
-      - "master" # v2
+      - "v2"
+      - "master" # v3
 
 permissions:
   contents: write

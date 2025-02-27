@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 # check=error=true
 
-FROM python:3-alpine3.22
+FROM python:3-slim
 
 ARG ANSIBLE_DEPLOY_BRANCH
 
@@ -11,11 +11,14 @@ ENV ANSIBLE_RETRY_FILES_ENABLED=false
 ENV ANSIBLE_STDOUT_CALLBACK=debug
 ENV ANSIBLE_DEPLOY_BRANCH=${ANSIBLE_DEPLOY_BRANCH:-master}
 
-RUN adduser -u 1000 -D ansible && \
-    apk add --no-cache bash git mysql-client openssh-client postgresql15-client postgresql16-client postgresql17-client rsync sshpass && \
-    apk add --no-cache --virtual build-dependencies gcc libffi-dev musl-dev && \
-    pip install --no-cache-dir ansible ansible-core~=2.17.1 && \
-    apk del build-dependencies
+RUN adduser -u 1000 ansible && \
+    apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends postgresql-common && \
+    /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y && \
+    apt-get install -y --no-install-recommends bash git mariadb-client openssh-client rsync sshpass postgresql-client-9.6 postgresql-client-10 postgresql-client-11 postgresql-client-12 postgresql-client-13 postgresql-client-14 postgresql-client-15 postgresql-client-16 postgresql-client-17 postgresql-client-18 && \
+    rm -rf /var/lib/apt/lists/* && \
+    pip install --no-cache-dir ansible-core
 
 WORKDIR /app
 

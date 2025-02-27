@@ -11,3 +11,31 @@
     php_facts:
       version: "{{ php_version.stdout }}"
       extensions: "{{ php_extensions.stdout_lines }}"
+
+- name: LEPHARE - Set facts for Alpine BC - db_pull_postgresql_createdb_binary_path
+  set_fact:
+    db_pull_postgresql_createdb_binary_path: "{{ db_pull_postgresql_createdb_binary_path | regex_replace('^/usr/libexec/postgresql([0-9]*)/createdb$', '/usr/lib/postgresql/\\1/bin/createdb') }}"
+  when: "db_pull_postgresql_createdb_binary_path is defined and (db_pull_postgresql_createdb_binary_path | regex_search('^/usr/libexec/postgresql[0-9]+/createdb')) != None"
+
+- name: LEPHARE - Set facts for Alpine BC - db_pull_postgresql_dropdb_binary_path
+  set_fact:
+    db_pull_postgresql_dropdb_binary_path: "{{ db_pull_postgresql_dropdb_binary_path | regex_replace('^/usr/libexec/postgresql([0-9]*)/dropdb$', '/usr/lib/postgresql/\\1/bin/dropdb') }}"
+  when: "db_pull_postgresql_dropdb_binary_path is defined and (db_pull_postgresql_dropdb_binary_path | regex_search('^/usr/libexec/postgresql[0-9]+/dropdb')) != None"
+
+- name: LEPHARE - Set facts for Alpine BC - db_pull_postgresql_pg_dump_binary_path
+  set_fact:
+    db_pull_postgresql_pg_dump_binary_path: "{{ db_pull_postgresql_pg_dump_binary_path | regex_replace('^/usr/libexec/postgresql([0-9]*)/pg_dump$', '/usr/lib/postgresql/\\1/bin/pg_dump') }}"
+  when: "db_pull_postgresql_pg_dump_binary_path is defined and (db_pull_postgresql_pg_dump_binary_path | regex_search('^/usr/libexec/postgresql[0-9]+/pg_dump')) != None"
+
+- name: LEPHARE - Set facts for Alpine BC - db_pull_postgresql_pg_restore_binary_path
+  set_fact:
+    db_pull_postgresql_pg_restore_binary_path: "{{ db_pull_postgresql_pg_restore_binary_path | regex_replace('^/usr/libexec/postgresql([0-9]*)/pg_restore$', '/usr/lib/postgresql/\\1/bin/pg_restore') }}"
+  when: "db_pull_postgresql_pg_restore_binary_path is defined and (db_pull_postgresql_pg_restore_binary_path | regex_search('^/usr/libexec/postgresql[0-9]+/pg_restore')) != None"
+
+- name: LEPHARE - Set facts for PostgreSQL binaries path
+  set_fact:
+    db_pull_postgresql_createdb_binary_path: "{{ db_pull_postgresql_createdb_binary_path | default('/usr/lib/postgresql/' + (lephare_postgresql_version | string) + '/bin/createdb') }}"
+    db_pull_postgresql_dropdb_binary_path: "{{ db_pull_postgresql_dropdb_binary_path | default('/usr/lib/postgresql/' + (lephare_postgresql_version | string) + '/bin/dropdb') }}"
+    db_pull_postgresql_pg_dump_binary_path: "{{ db_pull_postgresql_pg_dump_binary_path | default('/usr/lib/postgresql/' + (lephare_postgresql_version | string) + '/bin/pg_dump') }}"
+    db_pull_postgresql_pg_restore_binary_path: "{{ db_pull_postgresql_pg_restore_binary_path | default('/usr/lib/postgresql/' + (lephare_postgresql_version | string) + '/bin/pg_restore') }}"
+  when: "lephare_postgresql_version is defined"
