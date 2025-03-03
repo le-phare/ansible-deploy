@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/le-phare/ansible-deploy/compare/v2.2.0...v2.3.0) (2025-03-03)
+
+
+### Features
+
+* **adminer:** switch back to Adminer ([#76](https://github.com/le-phare/ansible-deploy/issues/76)) ([e16c8d9](https://github.com/le-phare/ansible-deploy/commit/e16c8d9875f66af8b3b0e75ee4f371556511a3c5))
+* support PostgreSQL 15-17 ([#74](https://github.com/le-phare/ansible-deploy/issues/74)) ([4225d4a](https://github.com/le-phare/ansible-deploy/commit/4225d4aa246b886eb335bd2a9177b0a17404a505))
+
+
+### Bug Fixes
+
+* **release-please:** handle v1 versions ([729665b](https://github.com/le-phare/ansible-deploy/commit/729665bd5a5aa854c5d679cca6953cfffa952703))
+
 ## [2.2.0](https://github.com/le-phare/ansible-deploy/compare/v2.1.0...v2.2.0) (2024-09-13)
 
 
