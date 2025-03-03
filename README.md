@@ -105,6 +105,8 @@ Set vars:
 db_pull_postgresql_createdb_binary_path: "/usr/libexec/postgresql15/createdb"
 db_pull_postgresql_dropdb_binary_path: "/usr/libexec/postgresql15/dropdb"
 db_pull_postgresql_pg_restore_binary_path: "/usr/libexec/postgresql15/pg_restore"
+
+db_pull_postgresql_pg_dump_binary_path: "/usr/lib/postgresql/15/bin/pg_dump" # Path on the remote machine (Debian in this example). Only needed if the default remote `pg_dump` binary isn't the one you want.
 ```
 
 ## Contribute
