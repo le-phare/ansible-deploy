@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.14.0](https://github.com/le-phare/ansible-deploy/compare/v1.13.0...v1.14.0) (2025-06-30)
+
+
+### Features
+
+* **adminer:** switch back to Adminer ([#76](https://github.com/le-phare/ansible-deploy/issues/76)) ([b8308da](https://github.com/le-phare/ansible-deploy/commit/b8308da276c651ce551bf504dec824234ff158ce))
+
 ## [1.13.0](https://github.com/le-phare/ansible-deploy/compare/v1.12.3...v1.13.0) (2024-10-04)
 
 
