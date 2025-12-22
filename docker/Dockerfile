@@ -12,7 +12,7 @@ ENV ANSIBLE_STDOUT_CALLBACK=debug
 ENV ANSIBLE_DEPLOY_BRANCH=${ANSIBLE_DEPLOY_BRANCH:-master}
 
 RUN adduser -u 1000 -D ansible && \
-    apk add --no-cache bash git mysql-client openssh-client postgresql15-client postgresql16-client postgresql17-client rsync sshpass && \
+    apk add --no-cache bash git mysql-client openssh-client postgresql16-client postgresql17-client rsync sshpass && \
     apk add --no-cache --virtual build-dependencies gcc libffi-dev musl-dev && \
     pip install --no-cache-dir ansible ansible-core~=2.17.1 && \
     apk del build-dependencies
