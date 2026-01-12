@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 # check=error=true
 
-FROM python:3-alpine
+FROM python:3-alpine3.22
 
 ARG ANSIBLE_DEPLOY_BRANCH
 
