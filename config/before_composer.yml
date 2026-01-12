@@ -2,8 +2,11 @@
   when: lephare_packagist_com_token != "" or lephare_gitlab_token != ""
 
 - name: Set release environment variable
-  shell: chdir={{ansistrano_release_path.stdout}}
-    echo "APP_RELEASE={{ ansistrano_git_result.after|truncate(12, true, '') }}" | tee -a .env.{{ symfony_env }}
+  ansible.builtin.lineinfile:
+    path: "{{ ansistrano_release_path.stdout }}/.env.{{ symfony_env }}"
+    regexp: '^APP_RELEASE='
+    line: "APP_RELEASE={{ ansistrano_git_result.after|truncate(12, true, '') }}"
+    create: true
 
 - name: Dump an existing database to a file (with compression)
   when: lephare_dump_database
