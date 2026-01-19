@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.1](https://github.com/le-phare/ansible-deploy/compare/v2.5.0...v2.5.1) (2026-01-19)
+
+
+### Bug Fixes
+
+* **sentry:** use native Ansible module to write APP_RELEASE to file ([#94](https://github.com/le-phare/ansible-deploy/issues/94)) ([b3a4f3a](https://github.com/le-phare/ansible-deploy/commit/b3a4f3a4b4901c7ef7195d5cef7ba8dd4bc0211a))
+
 ## [2.5.0](https://github.com/le-phare/ansible-deploy/compare/v2.4.1...v2.5.0) (2025-05-16)
 
 
