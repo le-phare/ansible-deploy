@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/le-phare/ansible-deploy/compare/v2.5.1...v3.0.0) (2026-01-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate from Alpine to Debian, support PostgreSQL 9-18, update Ansible
+
+### Features
+
+* migrate from Alpine to Debian, support PostgreSQL 9-18, update Ansible ([426bfe4](https://github.com/le-phare/ansible-deploy/commit/426bfe44ca1ab2ef5e44f293ad388abb6971cfba))
+* use Le Phare Ansistrano Symfony Deploy to fix upstream errors ([8d99797](https://github.com/le-phare/ansible-deploy/commit/8d997973bc5696619bb139cbf4596c7f2df59f57))
+
 ## [2.5.1](https://github.com/le-phare/ansible-deploy/compare/v2.5.0...v2.5.1) (2026-01-19)
 
 
