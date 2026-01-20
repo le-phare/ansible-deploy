@@ -3,13 +3,12 @@
 
 FROM python:3-slim
 
-ARG ANSIBLE_DEPLOY_BRANCH
-
 ENV ANSIBLE_PIPELINING=true
 ENV ANSIBLE_PERSISTENT_CONTROL_PATH_DIR=/tmp/ansible-ssh-%%h-%%p-%%r
 ENV ANSIBLE_RETRY_FILES_ENABLED=false
 ENV ANSIBLE_STDOUT_CALLBACK=debug
-ENV ANSIBLE_DEPLOY_BRANCH=${ANSIBLE_DEPLOY_BRANCH:-master}
+
+WORKDIR /app
 
 RUN adduser -u 1000 ansible && \
     apt-get update && \
@@ -20,12 +19,10 @@ RUN adduser -u 1000 ansible && \
     rm -rf /var/lib/apt/lists/* && \
     pip install --no-cache-dir ansible-core
 
-WORKDIR /app
+USER ansible
 
 COPY ./requirements.yml /tmp/requirements.yml
 
-RUN sed -i -r "s@(name: lephare.ansible-deploy)@\1\n    version: $ANSIBLE_DEPLOY_BRANCH@g" /tmp/requirements.yml
-
-USER ansible
-
 RUN ansible-galaxy install -r /tmp/requirements.yml
+
+COPY --link . /home/ansible/.ansible/roles/lephare.ansible-deploy/

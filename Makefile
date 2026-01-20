@@ -1,2 +1,6 @@
 build:
-	docker buildx build --pull --tag lephare/ansible:local docker
+	docker buildx bake
+
+build-all:
+	docker run --privileged --rm tonistiigi/binfmt --install all
+	docker buildx bake image-all
