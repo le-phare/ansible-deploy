@@ -18,8 +18,8 @@ RUN adduser -u 1000 -D ansible && \
 
 USER ansible
 
-COPY ./requirements.yml /tmp/requirements.yml
+COPY --chown=1000:1000 ./requirements.yml /tmp/requirements.yml
 
 RUN ansible-galaxy install -r /tmp/requirements.yml
 
-COPY --link . /home/ansible/.ansible/roles/lephare.ansible-deploy/
+COPY --chown=1000:1000 . /home/ansible/.ansible/roles/lephare.ansible-deploy/

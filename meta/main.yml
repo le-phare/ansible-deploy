@@ -1,7 +1,8 @@
 ---
 dependencies:
   - name: cbrunnkvist.ansistrano-symfony-deploy
-    version: 1.4.3
+    src: https://github.com/le-phare/ansistrano-symfony-deploy
+    version: v1.4.3
 
 galaxy_info:
   author: Le Phare
