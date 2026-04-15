@@ -1,6 +1,7 @@
 ---
 dependencies:
-  - role: cbrunnkvist.ansistrano-symfony-deploy
+  - name: cbrunnkvist.ansistrano-symfony-deploy
+    version: 1.4.3
 
 galaxy_info:
   author: Le Phare
