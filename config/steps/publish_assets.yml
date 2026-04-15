@@ -1,5 +1,5 @@
 - name: LEPHARE - Publish assets
-  synchronize:
+  ansible.posix.synchronize:
     src: "{{ lephare_assets_build_path }}"
     dest: "{{ lephare_document_root_path }}/{{ lephare_assets_web_path }}"
     recursive: yes

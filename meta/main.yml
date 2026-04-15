@@ -1,14 +1,15 @@
 ---
 dependencies:
-  - { role: cbrunnkvist.ansistrano-symfony-deploy }
+  - name: cbrunnkvist.ansistrano-symfony-deploy
+    version: 1.4.3
 
 galaxy_info:
-  author: Erwan Richard
+  author: Le Phare
   description: Common deploy tasks for projects made at Le Phare
   company: Le Phare
   license: MIT
-  issue_tracker_url: https://github.com/lephare/ansible-lephare
-  min_ansible_version: 1.8
+  issue_tracker_url: https://github.com/le-phare/ansible-deploy
+  min_ansible_version: "2.6"
   platforms:
     - name: GenericUNIX
       versions:

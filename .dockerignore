@@ -1,0 +1,7 @@
+.github/
+
+.editorconfig
+.gitignore
+.pre-commit-config.yaml
+docker-bake.hcl
+Makefile
