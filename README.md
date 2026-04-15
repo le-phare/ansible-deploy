@@ -9,7 +9,6 @@ Common deploy tasks for projects made at Le Phare.
 
 ## Support matrix
 
-- lephare/ansible:3.0.0 - Ansible 2.20+ - Python 3.9 - 3.14 (Target node)
 - lephare/ansible:2.0.0 - Ansible 2.17 - Python 3.7 - 3.12 (Target node)
 - lephare/ansible:1.12.3 - Ansible 2.15.4 - Python 2.7 or Python 3.5 - 3.11 (Target node)
 
@@ -97,20 +96,15 @@ docker run -it --rm \
 
 ## Restore an older PostgreSQL database using db-pull in Docker
 
-Supported PostgreSQL versions: 9 - 18.
+**NB: We only support PostgreSQL versions
+currently [supported by Alpine Linux](https://pkgs.alpinelinux.org/packages?name=postgresql%3F%3F-client)**
 
-Set this Ansible variable to the version used in your project:
-
-```yaml
-lephare_postgresql_version: 18
-```
-
-or alternatively:
+Set vars:
 
 ```yaml
-db_pull_postgresql_createdb_binary_path: "/usr/lib/postgresql/15/bin/createdb"
-db_pull_postgresql_dropdb_binary_path: "/usr/lib/postgresql/15/bin/dropdb"
-db_pull_postgresql_pg_restore_binary_path: "/usr/lib/postgresql/15/bin/pg_restore"
+db_pull_postgresql_createdb_binary_path: "/usr/libexec/postgresql15/createdb"
+db_pull_postgresql_dropdb_binary_path: "/usr/libexec/postgresql15/dropdb"
+db_pull_postgresql_pg_restore_binary_path: "/usr/libexec/postgresql15/pg_restore"
 
 db_pull_postgresql_pg_dump_binary_path: "/usr/lib/postgresql/15/bin/pg_dump" # Path on the remote machine (Debian in this example). Only needed if the default remote `pg_dump` binary isn't the one you want.
 ```

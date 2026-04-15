@@ -13,11 +13,6 @@ ansistrano_deploy_via: git
 ansistrano_allow_anonymous_stats: no
 ansistrano_keep_releases: 3
 
-db_pull_postgresql_createdb_binary_path: "/usr/lib/postgresql/{{ lephare_postgresql_version }}/bin/createdb"
-db_pull_postgresql_dropdb_binary_path: "/usr/lib/postgresql/{{ lephare_postgresql_version }}/bin/dropdb"
-db_pull_postgresql_pg_dump_binary_path: "/usr/lib/postgresql/{{ lephare_postgresql_version }}/bin/pg_dump"
-db_pull_postgresql_pg_restore_binary_path: "/usr/lib/postgresql/{{ lephare_postgresql_version }}/bin/pg_restore"
-
 symfony_run_assetic_dump: "{{ lephare_run_assetic_dump }}"
 symfony_run_assets_install: "{{ lephare_run_assets_install }}"
 symfony_run_cache_clear_and_warmup: "{{ lephare_run_cache_clear_and_warmup }}"
