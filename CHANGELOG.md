@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.6.0](https://github.com/le-phare/ansible-deploy/compare/v2.5.1...v2.6.0) (2026-04-16)
+
+
+### Features
+
+* **steps:** add optional js translation dump ([#101](https://github.com/le-phare/ansible-deploy/issues/101)) ([0799be4](https://github.com/le-phare/ansible-deploy/commit/0799be4f7c3c2c95acb221f2810e5c774a74c909))
+
+
+### Bug Fixes
+
+* **ansible:** dependencies installation ([#103](https://github.com/le-phare/ansible-deploy/issues/103)) ([a14f015](https://github.com/le-phare/ansible-deploy/commit/a14f015bcc54215237896ed7131d99a4e815e041))
+* **ansistrano:** avoid BC-breaks introduced in v4 ([#102](https://github.com/le-phare/ansible-deploy/issues/102)) ([6a85e56](https://github.com/le-phare/ansible-deploy/commit/6a85e568be6cb2d6810e04ffac0f7b8df31444a9))
+
 ## [2.5.1](https://github.com/le-phare/ansible-deploy/compare/v2.5.0...v2.5.1) (2026-01-19)
 
 
