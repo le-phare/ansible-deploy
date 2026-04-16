@@ -3,7 +3,7 @@
 
 - name: Set release environment variable
   ansible.builtin.lineinfile:
-    path: "{{ ansistrano_release_path.stdout }}/.env.{{ symfony_env }}"
+    path: "{{ ansistrano_release_path }}/.env.{{ symfony_env }}"
     regexp: '^APP_RELEASE='
     line: "APP_RELEASE={{ ansistrano_git_result.after|truncate(12, true, '') }}"
     create: true
@@ -22,6 +22,6 @@
 - name: Setup {{ symfony_env }} secrets decrypt key
   template:
     src: symfony/secrets_private.php.j2
-    dest: "{{ ansistrano_release_path.stdout }}/config/secrets/{{ symfony_env }}/{{ symfony_env }}.decrypt.private.php"
+    dest: "{{ ansistrano_release_path }}/config/secrets/{{ symfony_env }}/{{ symfony_env }}.decrypt.private.php"
     mode: 0644
   when: symfony_secret_private_key is defined
