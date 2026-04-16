@@ -17,7 +17,7 @@ RUN adduser -u 1000 ansible && \
     /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y && \
     apt-get install -y --no-install-recommends bash git mariadb-client openssh-client rsync sshpass postgresql-client-9.6 postgresql-client-10 postgresql-client-11 postgresql-client-12 postgresql-client-13 postgresql-client-14 postgresql-client-15 postgresql-client-16 postgresql-client-17 postgresql-client-18 && \
     rm -rf /var/lib/apt/lists/* && \
-    pip install --no-cache-dir ansible-core
+    pip install --no-cache-dir ansible ansible-core
 
 USER ansible
 
