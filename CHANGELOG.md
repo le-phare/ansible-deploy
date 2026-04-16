@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/le-phare/ansible-deploy/compare/v2.6.0...v3.0.0) (2026-04-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **ansistrano:** BC-breaks ([#104](https://github.com/le-phare/ansible-deploy/issues/104))
+
+### Features
+
+* **ansistrano:** BC-breaks ([#104](https://github.com/le-phare/ansible-deploy/issues/104)) ([d9958f7](https://github.com/le-phare/ansible-deploy/commit/d9958f723969ccd97000b834dbb94079bf908ea8))
+
+
+### Bug Fixes
+
+* backports from newer versions ([f92516d](https://github.com/le-phare/ansible-deploy/commit/f92516db153c8cdabe923043a1bd78a57d4aceb2))
+
 ## [2.6.0](https://github.com/le-phare/ansible-deploy/compare/v2.5.1...v2.6.0) (2026-04-16)
 
 
