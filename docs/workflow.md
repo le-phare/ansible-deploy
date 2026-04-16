@@ -30,21 +30,21 @@ stateDiagram-v2
 
            state ansistrano_symfony_before_composer_tasks_file {
                lephare_symfony_before_composer_tasks_file --> ansistrano_symfony_after_composer_tasks_file
-               
+
                state lephare_symfony_before_composer_tasks_file {
                   PrivateRegistry --> SetReleaseEnvironmentVariable
                   SetReleaseEnvironmentVariable --> DumpAnExistingDatabaseToFile
                   DumpAnExistingDatabaseToFile --> SetupSecretDecryptKey
-                  
+
                   state PrivateRegistry {
                       ComposerHome --> SetupPrivateRegistry
                   }
                }
            }
-           
+
            state ansistrano_symfony_after_composer_tasks_file {
                lephare_symfony_after_composer_tasks_file
-               
+
                state lephare_symfony_after_composer_tasks_file {
                    DumpEnvironment
                }
@@ -61,7 +61,7 @@ stateDiagram-v2
 
        state Cache {
            ansistrano_symfony_before_cache_tasks_file --> ansistrano_symfony_after_cache_tasks_file
-           
+
            state ansistrano_symfony_after_cache_tasks_file {
                SetPermissions
            }
@@ -69,10 +69,10 @@ stateDiagram-v2
 
        state Doctrine {
            ansistrano_symfony_before_doctrine_tasks_file --> ansistrano_symfony_after_doctrine_tasks_file
-           
+
            state ansistrano_symfony_before_doctrine_tasks_file {
                lephare_symfony_before_doctrine_tasks_file --> ansistrano_symfony_after_doctrine_tasks_file
-               
+
                state lephare_symfony_before_doctrine_tasks_file {
                    StopWorkers
                }
@@ -86,10 +86,10 @@ stateDiagram-v2
 
     state Symlink {
         ansistrano_before_symlink_tasks_file --> ansistrano_after_symlink_tasks_file
-        
+
         state ansistrano_before_symlink_tasks_file {
             lephare_before_symlink_tasks_file
-            
+
             state lephare_before_symlink_tasks_file {
                 PublishAssets --> PreventIndexation
                 PreventIndexation --> Secure
@@ -99,7 +99,7 @@ stateDiagram-v2
                 state "Remove files" as RemoveFiles
             }
         }
-        
+
         state ansistrano_after_symlink_tasks_file {
             CacheTool --> Crontab
             Crontab --> MessengerEnable
