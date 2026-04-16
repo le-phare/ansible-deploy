@@ -14,5 +14,5 @@
   when: not couscous_file.stat.exists
 
 - name: LEPHARE - Run couscous generate
-  shell: chdir={{ansistrano_release_path.stdout}}
+  shell: chdir={{ansistrano_release_path}}
     {{ symfony_php_path }} {{ lephare_couscous_path }} generate {{ lephare_couscous_documentation_path }} --target={{ lephare_couscous_target }} --config baseUrl={{ lephare_couscous_baseUrl }}
