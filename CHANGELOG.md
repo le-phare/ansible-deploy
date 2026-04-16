@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.1](https://github.com/le-phare/ansible-deploy/compare/v3.0.0...v3.0.1) (2026-04-16)
+
+
+### Bug Fixes
+
+* **ansible:** community.general is already downloaded by pip install ansible ([bd02e13](https://github.com/le-phare/ansible-deploy/commit/bd02e13550f12394796f54da67ac1f1bd7e538fa))
+* **ansible:** restore pip install ansible to install community.general ([2ef7d25](https://github.com/le-phare/ansible-deploy/commit/2ef7d257d3a312eeb83fa76898344fa302d8fcc4))
+
 ## [3.0.0](https://github.com/le-phare/ansible-deploy/compare/v2.6.0...v3.0.0) (2026-04-16)
 
 
