@@ -1,0 +1,3 @@
+- name: LEPHARE - Dump JS translations (BazingaJsTranslationBundle)
+  shell: chdir={{ ansistrano_release_path.stdout }}
+    APP_ENV={{ symfony_env }} {{ symfony_php_path }} {{ symfony_console_path }} bazinga:js-translation:dump {{ lephare_bazinga_js_translation_dump_args }} --no-interaction

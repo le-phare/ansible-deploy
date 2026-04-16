@@ -10,6 +10,9 @@ lephare_assets_publish_rsync_opts: []
 lephare_assets_build_path: "../web/compiled/"
 lephare_assets_web_path: "compiled/"
 
+lephare_bazinga_js_translation_dump: false
+lephare_bazinga_js_translation_dump_args: ""
+
 lephare_cachetool_adapter: web
 lephare_cachetool_fastcgi: '127.0.0.1:9000' # only used if lephare_cachetool_adapter is fastcgi
 lephare_cachetool_enable: true
