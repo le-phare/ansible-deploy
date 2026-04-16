@@ -6,16 +6,3 @@ roles:
 
   - name: cbrunnkvist.ansistrano-symfony-deploy
     src: https://github.com/le-phare/ansistrano-symfony-deploy
-
-collections:
-  - name: community.general
-    source: https://galaxy.ansible.com
-
-  - name: ansible.posix
-    source: https://galaxy.ansible.com
-
-  - name: community.mysql
-    source: https://galaxy.ansible.com
-
-  - name: community.postgresql
-    source: https://galaxy.ansible.com
