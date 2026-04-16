@@ -7,7 +7,3 @@ roles:
   - name: cbrunnkvist.ansistrano-symfony-deploy
     src: https://github.com/le-phare/ansistrano-symfony-deploy
     version: v1.4.3
-
-collections:
-  - name: community.general
-    source: https://galaxy.ansible.com
