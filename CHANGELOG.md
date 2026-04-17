@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.2](https://github.com/le-phare/ansible-deploy/compare/v3.0.1...v3.0.2) (2026-04-17)
+
+
+### Bug Fixes
+
+* **ansible:** use strict typing to fix cachetool self-update error ([#112](https://github.com/le-phare/ansible-deploy/issues/112)) ([12c3ad1](https://github.com/le-phare/ansible-deploy/commit/12c3ad16647ca0519523cc55d46f59184621bc5c))
+
 ## [3.0.1](https://github.com/le-phare/ansible-deploy/compare/v3.0.0...v3.0.1) (2026-04-16)
 
 
