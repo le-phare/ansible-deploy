@@ -41,7 +41,7 @@
     {{ symfony_php_path }} {{ lephare_cachetool_path }} self-update
   when: cachetool_file.stat.exists and lephare_cachetool_self_update and cachetool_facts.required_version == 'latest'
   register: cachetool_self_update_result
-  changed_when: cachetool_self_update_result.stderr
+  changed_when: cachetool_self_update_result.stderr != ''
 
 - name: LEPHARE - get new cachetool version
   shell: chdir={{ ansistrano_release_path }}
