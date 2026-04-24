@@ -6,3 +6,6 @@ roles:
 
   - name: cbrunnkvist.ansistrano-symfony-deploy
     src: https://github.com/le-phare/ansistrano-symfony-deploy
+
+collections:
+  - name: bitwarden.secrets

@@ -1,3 +1,6 @@
+- include_tasks: "../../lephare.ansible-deploy/config/steps/set_dotenv.yml"
+  when: "lephare_set_dotenv_variables is defined and lephare_set_dotenv_variables != {}"
+
 - include_tasks: "../../lephare.ansible-deploy/config/steps/composer/dump_env.yml"
   when: lephare_composer_dump_environment
 
