@@ -1,0 +1,14 @@
+- name: LEPHARE | dotenv | Create .env.local if missing
+  ansible.builtin.file:
+    path: "{{ ansistrano_release_path }}/.env.local"
+    state: touch
+    mode: '0644'
+
+- name: LEPHARE | dotenv | Set variables in .env.local
+  ansible.builtin.lineinfile:
+    path: "{{ ansistrano_release_path }}/.env.local"
+    regexp: '^{{ item.key }}='
+    line: "{{ item.key }}={{ item.value }}"
+  loop: "{{ lephare_set_dotenv_variables|dict2items }}"
+  no_log: True
+  when: "lephare_set_dotenv_variables is defined and lephare_set_dotenv_variables != {}"

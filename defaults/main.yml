@@ -93,6 +93,8 @@ lephare_remove_files_paths: []
 
 lephare_postgresql_version: 18
 
+lephare_set_dotenv_variables: {}
+
 # Symfony messenger defaults
 symfony_messenger_enable: false
 symfony_messenger_strategy: crontab
