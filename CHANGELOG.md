@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/le-phare/ansible-deploy/compare/v3.0.2...v3.1.0) (2026-05-06)
+
+
+### Features
+
+* set .env.local variables, install Bitwarden Secrets Manager ([#114](https://github.com/le-phare/ansible-deploy/issues/114)) ([ad1270d](https://github.com/le-phare/ansible-deploy/commit/ad1270d6420af32696c4bfb5c257f8848b941add))
+
 ## [3.0.2](https://github.com/le-phare/ansible-deploy/compare/v3.0.1...v3.0.2) (2026-04-17)
 
 
