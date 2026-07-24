@@ -26,6 +26,8 @@ lephare_cachetool_options: ""
 lephare_cachetool_retries: 10
 lephare_cachetool_delay: 15
 
+lephare_git_remote_prune: true
+
 lephare_gitlab_token: ""
 
 lephare_packagist_com_token: ""
