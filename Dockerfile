@@ -1,6 +1,8 @@
 # syntax=docker/dockerfile:1
 # check=error=true
 
+FROM ghcr.io/bitwarden/bws:latest AS bws
+
 FROM python:3-slim
 
 ENV ANSIBLE_PIPELINING=true
@@ -20,6 +22,8 @@ RUN adduser -u 1000 ansible && \
     pip install --no-cache-dir ansible ansible-core bitwarden-sdk
 
 USER ansible
+
+COPY --from=bws --chown=1000:1000 /bin/bws /usr/local/bin/bws
 
 COPY --chown=1000:1000 ./requirements.yml /tmp/requirements.yml
 
