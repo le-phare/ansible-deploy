@@ -2,7 +2,7 @@
 roles:
   - name: db-pull
     src: https://github.com/le-phare/ansible-db-pull
-    version: v1.5.0
+    version: v1.6.0
 
   - name: cbrunnkvist.ansistrano-symfony-deploy
     src: https://github.com/le-phare/ansistrano-symfony-deploy
