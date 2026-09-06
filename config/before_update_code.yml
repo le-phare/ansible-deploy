@@ -1,0 +1,2 @@
+- include_tasks: "../../lephare.ansible-deploy/config/steps/git_remote_prune.yml"
+  when: lephare_git_remote_prune and ansistrano_deploy_via == 'git'
