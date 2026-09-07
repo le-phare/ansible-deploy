@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.1](https://github.com/le-phare/ansible-deploy/compare/v3.2.0...v3.2.1) (2026-09-07)
+
+
+### Bug Fixes
+
+* **db-pull:** update version to 1.6.1 ([7738ffc](https://github.com/le-phare/ansible-deploy/commit/7738ffccb2b344bfa298cd930a577c8a518ff15f))
+
 ## [3.2.0](https://github.com/le-phare/ansible-deploy/compare/v3.1.0...v3.2.0) (2026-08-27)
 
 
