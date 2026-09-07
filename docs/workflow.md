@@ -12,6 +12,14 @@ stateDiagram-v2
 
     state UpdateCode {
         ansistrano_before_update_code_tasks_file --> ansistrano_after_update_code_tasks_file
+
+        state ansistrano_before_update_code_tasks_file {
+            lephare_before_update_code_tasks_file
+
+            state lephare_before_update_code_tasks_file {
+                GitRemotePrune
+            }
+        }
     }
 
     state SymlinkShared {

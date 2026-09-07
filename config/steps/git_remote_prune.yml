@@ -1,0 +1,7 @@
+- name: LEPHARE - GIT - Prune stale remote refs in cached repository
+  command: git remote prune origin
+  args:
+    chdir: "{{ ansistrano_deploy_to }}/{{ ansistrano_repo_dir | default('repo') }}"
+    removes: "{{ ansistrano_deploy_to }}/{{ ansistrano_repo_dir | default('repo') }}/.git"
+  register: git_remote_prune
+  changed_when: git_remote_prune.stdout | length > 0
